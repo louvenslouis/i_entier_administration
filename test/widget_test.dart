@@ -119,6 +119,32 @@ void main() {
       'Licence professionnelle illisible.',
     );
   });
+
+  testWidgets('affiche les tarifs publiés d’une institution à vérifier', (
+    tester,
+  ) async {
+    final repository = _FakeAdminRepository([
+      _application(
+        id: 'institution-1',
+        name: 'Clinique Espoir',
+        category: 'Clinique',
+        type: ApplicationType.institution,
+        institutionPricesPublished: true,
+        servicePrices: 'Consultation : 2 500',
+        roomPrices: 'Chambre standard : 6 000 / nuit',
+      ),
+    ]);
+
+    await tester.pumpWidget(_dashboard(repository));
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('Voir le dossier'));
+    await tester.pumpAndSettle();
+
+    expect(find.text('Tarifs de l’institution'), findsOneWidget);
+    expect(find.text('Autorisée par l’institution'), findsOneWidget);
+    expect(find.text('Consultation : 2 500'), findsOneWidget);
+    expect(find.text('Chambre standard : 6 000 / nuit'), findsOneWidget);
+  });
 }
 
 Widget _dashboard(_FakeAdminRepository repository) => MaterialApp(
@@ -138,6 +164,9 @@ ProviderApplication _application({
   required String name,
   required String category,
   ApplicationType type = ApplicationType.professional,
+  bool institutionPricesPublished = false,
+  String servicePrices = '',
+  String roomPrices = '',
 }) => ProviderApplication(
   id: id,
   type: type,
@@ -154,6 +183,9 @@ ProviderApplication _application({
   qualifications: 'Diplôme et licence',
   services: 'Consultations',
   schedule: 'Lundi au vendredi',
+  institutionPricesPublished: institutionPricesPublished,
+  servicePrices: servicePrices,
+  roomPrices: roomPrices,
   available: true,
   isVisible: false,
   status: ApplicationStatus.pending,

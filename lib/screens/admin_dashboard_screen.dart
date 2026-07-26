@@ -1130,8 +1130,47 @@ class _ApplicationDetailDialog extends StatelessWidget {
                         label: 'Horaires',
                         value: application.schedule,
                       ),
+                      if (application.type == ApplicationType.professional &&
+                          application.appointmentModesSummary.isNotEmpty)
+                        _DetailItem(
+                          label: 'Disponibilités par mode',
+                          value: application.appointmentModesSummary,
+                          fullWidth: true,
+                        ),
+                      if (application.type == ApplicationType.professional &&
+                          application.defaultPrice.isNotEmpty)
+                        _DetailItem(
+                          label: 'Prix indicatif',
+                          value: '${application.defaultPrice} HTG',
+                        ),
                     ],
                   ),
+                  if (application.type == ApplicationType.institution) ...[
+                    const SizedBox(height: 16),
+                    _DetailSection(
+                      title: 'Tarifs de l’institution',
+                      children: [
+                        _DetailItem(
+                          label: 'Publication dans l’annuaire',
+                          value: application.institutionPricesPublished
+                              ? 'Autorisée par l’institution'
+                              : 'Non autorisée par l’institution',
+                        ),
+                        if (application.servicePrices.isNotEmpty)
+                          _DetailItem(
+                            label: 'Tarifs des services',
+                            value: application.servicePrices,
+                            fullWidth: true,
+                          ),
+                        if (application.roomPrices.isNotEmpty)
+                          _DetailItem(
+                            label: 'Tarifs des chambres',
+                            value: application.roomPrices,
+                            fullWidth: true,
+                          ),
+                      ],
+                    ),
+                  ],
                   if (application.rejectionReason.isNotEmpty) ...[
                     const SizedBox(height: 16),
                     Container(

@@ -51,6 +51,16 @@ class ProviderApplication {
   final String qualifications;
   final String services;
   final String schedule;
+  final String atProviderSchedule;
+  final String homeVisitSchedule;
+  final String videoSchedule;
+  final String defaultPrice;
+  final bool atProviderEnabled;
+  final bool homeVisitEnabled;
+  final bool videoEnabled;
+  final bool institutionPricesPublished;
+  final String servicePrices;
+  final String roomPrices;
   final bool available;
   final bool isVisible;
   final ApplicationStatus status;
@@ -74,6 +84,16 @@ class ProviderApplication {
     required this.qualifications,
     required this.services,
     required this.schedule,
+    this.atProviderSchedule = '',
+    this.homeVisitSchedule = '',
+    this.videoSchedule = '',
+    this.defaultPrice = '',
+    this.atProviderEnabled = false,
+    this.homeVisitEnabled = false,
+    this.videoEnabled = false,
+    this.institutionPricesPublished = false,
+    this.servicePrices = '',
+    this.roomPrices = '',
     required this.available,
     required this.isVisible,
     required this.status,
@@ -107,6 +127,16 @@ class ProviderApplication {
       qualifications: text('qualifications'),
       services: text('services'),
       schedule: text('schedule'),
+      atProviderSchedule: text('atProviderSchedule'),
+      homeVisitSchedule: text('homeVisitSchedule'),
+      videoSchedule: text('videoSchedule'),
+      defaultPrice: text('defaultPrice'),
+      atProviderEnabled: data['atProviderEnabled'] == true,
+      homeVisitEnabled: data['homeVisitEnabled'] == true,
+      videoEnabled: data['videoEnabled'] == true,
+      institutionPricesPublished: data['institutionPricesPublished'] == true,
+      servicePrices: text('servicePrices'),
+      roomPrices: text('roomPrices'),
       available: data['available'] != false,
       isVisible: data['isVisible'] == true,
       status: ApplicationStatusText.fromStorage(text('verificationStatus')),
@@ -115,4 +145,13 @@ class ProviderApplication {
       updatedAt: date('updatedAt'),
     );
   }
+
+  String get appointmentModesSummary => [
+    if (atProviderEnabled && atProviderSchedule.isNotEmpty)
+      'Sur place : $atProviderSchedule',
+    if (homeVisitEnabled && homeVisitSchedule.isNotEmpty)
+      'À domicile : $homeVisitSchedule',
+    if (videoEnabled && videoSchedule.isNotEmpty)
+      'Visioconférence : $videoSchedule',
+  ].join('\n');
 }
