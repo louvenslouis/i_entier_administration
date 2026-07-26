@@ -32,6 +32,7 @@ class AdminAuthGate extends StatelessWidget {
     stream: SupabaseConfig.client.auth.onAuthStateChange.map(
       (state) => state.session?.user,
     ),
+    initialData: SupabaseConfig.client.auth.currentUser,
     builder: (context, snapshot) {
       if (snapshot.connectionState == ConnectionState.waiting) {
         return const AdminLoadingScreen();

@@ -23,6 +23,7 @@ class _AdminSignInScreenState extends State<AdminSignInScreen> {
     try {
       await SupabaseConfig.client.auth.signInWithOAuth(
         OAuthProvider.google,
+        redirectTo: SupabaseConfig.authRedirectUrl,
         queryParams: const {'prompt': 'select_account'},
       );
     } on AuthException catch (error) {
