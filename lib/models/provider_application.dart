@@ -1,5 +1,3 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
-
 enum ApplicationType { professional, institution }
 
 extension ApplicationTypeText on ApplicationType {
@@ -102,22 +100,25 @@ class ProviderApplication {
     this.updatedAt,
   });
 
-  factory ProviderApplication.fromFirestore(
-    DocumentSnapshot<Map<String, dynamic>> document,
-  ) {
-    final data = document.data() ?? const <String, dynamic>{};
+  factory ProviderApplication.fromRow(Map<String, dynamic> data) {
     String text(String key) => data[key]?.toString().trim() ?? '';
-    DateTime? date(String key) => switch (data[key]) {
-      Timestamp timestamp => timestamp.toDate(),
-      _ => null,
-    };
+    DateTime? date(String key) {
+      final value = data[key];
+      if (value is DateTime) return value;
+      return value is String ? DateTime.tryParse(value)?.toLocal() : null;
+    }
+
+    final legacy = data['legacy_availability_config'] is Map
+        ? Map<String, dynamic>.from(data['legacy_availability_config'] as Map)
+        : const <String, dynamic>{};
+
     return ProviderApplication(
-      id: document.id,
-      type: ApplicationTypeText.fromStorage(text('accountType')),
-      displayName: text('displayName'),
+      id: text('provider_id'),
+      type: ApplicationTypeText.fromStorage(text('account_type')),
+      displayName: text('display_name'),
       category: text('category'),
-      registrationNumber: text('registrationNumber'),
-      contactPerson: text('contactPerson'),
+      registrationNumber: text('registration_number'),
+      contactPerson: text('contact_person'),
       workplace: text('workplace'),
       phone: text('phone'),
       email: text('email'),
@@ -125,24 +126,24 @@ class ProviderApplication {
       description: text('description'),
       experience: text('experience'),
       qualifications: text('qualifications'),
-      services: text('services'),
-      schedule: text('schedule'),
-      atProviderSchedule: text('atProviderSchedule'),
-      homeVisitSchedule: text('homeVisitSchedule'),
-      videoSchedule: text('videoSchedule'),
-      defaultPrice: text('defaultPrice'),
-      atProviderEnabled: data['atProviderEnabled'] == true,
-      homeVisitEnabled: data['homeVisitEnabled'] == true,
-      videoEnabled: data['videoEnabled'] == true,
-      institutionPricesPublished: data['institutionPricesPublished'] == true,
-      servicePrices: text('servicePrices'),
-      roomPrices: text('roomPrices'),
+      services: text('services_summary'),
+      schedule: text('schedule_summary'),
+      atProviderSchedule: legacy['atProviderSchedule']?.toString() ?? '',
+      homeVisitSchedule: legacy['homeVisitSchedule']?.toString() ?? '',
+      videoSchedule: legacy['videoSchedule']?.toString() ?? '',
+      defaultPrice: legacy['defaultPrice']?.toString() ?? '',
+      atProviderEnabled: legacy['atProviderEnabled'] == true,
+      homeVisitEnabled: legacy['homeVisitEnabled'] == true,
+      videoEnabled: legacy['videoEnabled'] == true,
+      institutionPricesPublished: data['institution_prices_published'] == true,
+      servicePrices: text('service_prices_summary'),
+      roomPrices: text('room_prices_summary'),
       available: data['available'] != false,
-      isVisible: data['isVisible'] == true,
-      status: ApplicationStatusText.fromStorage(text('verificationStatus')),
-      rejectionReason: text('rejectionReason'),
-      createdAt: date('createdAt'),
-      updatedAt: date('updatedAt'),
+      isVisible: data['is_visible'] == true,
+      status: ApplicationStatusText.fromStorage(text('verification_status')),
+      rejectionReason: text('rejection_reason'),
+      createdAt: date('created_at'),
+      updatedAt: date('updated_at'),
     );
   }
 

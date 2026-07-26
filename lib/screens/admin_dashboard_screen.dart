@@ -1,8 +1,9 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 
 import '../data/admin_repository.dart';
 import '../models/provider_application.dart';
+import '../supabase_config.dart';
 import '../theme/admin_theme.dart';
 
 enum _StatusFilter { all, pending, approved, rejected }
@@ -161,7 +162,7 @@ class _AdminDashboardScreenState extends State<AdminDashboardScreen> {
                 actions: [
                   IconButton(
                     tooltip: 'Déconnexion',
-                    onPressed: () => FirebaseAuth.instance.signOut(),
+                    onPressed: () => SupabaseConfig.client.auth.signOut(),
                     icon: const Icon(Icons.logout_rounded),
                   ),
                   const SizedBox(width: 8),
@@ -173,7 +174,7 @@ class _AdminDashboardScreenState extends State<AdminDashboardScreen> {
               if (desktop)
                 _AdminSidebar(
                   user: widget.user,
-                  onSignOut: () => FirebaseAuth.instance.signOut(),
+                  onSignOut: () => SupabaseConfig.client.auth.signOut(),
                 ),
               Expanded(
                 child: StreamBuilder<List<ProviderApplication>>(
@@ -1384,7 +1385,7 @@ class _ApplicationsError extends StatelessWidget {
               ),
               const SizedBox(height: 7),
               const Text(
-                'Vérifiez les règles Firestore et le rôle administrateur.',
+                'Vérifiez les politiques Supabase et le rôle administrateur.',
                 textAlign: TextAlign.center,
               ),
             ],

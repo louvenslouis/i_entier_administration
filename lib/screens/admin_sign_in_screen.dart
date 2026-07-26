@@ -1,6 +1,7 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 
+import '../supabase_config.dart';
 import '../theme/admin_theme.dart';
 
 class AdminSignInScreen extends StatefulWidget {
@@ -20,16 +21,13 @@ class _AdminSignInScreenState extends State<AdminSignInScreen> {
       _error = null;
     });
     try {
-      final provider = GoogleAuthProvider()
-        ..setCustomParameters({'prompt': 'select_account'});
-      await FirebaseAuth.instance.signInWithPopup(provider);
-    } on FirebaseAuthException catch (error) {
+      await SupabaseConfig.client.auth.signInWithOAuth(
+        OAuthProvider.google,
+        queryParams: const {'prompt': 'select_account'},
+      );
+    } on AuthException catch (error) {
       setState(() {
-        _error = switch (error.code) {
-          'popup-closed-by-user' => 'La fenêtre de connexion a été fermée.',
-          'network-request-failed' => 'Vérifiez votre connexion Internet.',
-          _ => 'Connexion impossible pour le moment.',
-        };
+        _error = error.message;
       });
     } catch (_) {
       setState(() => _error = 'La connexion Google n’a pas abouti.');
@@ -258,7 +256,7 @@ class _AdminSignInCard extends StatelessWidget {
             SizedBox(width: 7),
             Expanded(
               child: Text(
-                'Accès contrôlé par les règles Firestore.',
+                'Accès contrôlé par les politiques Supabase.',
                 style: TextStyle(color: AdminColors.muted, fontSize: 12),
               ),
             ),

@@ -1,4 +1,3 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:i_entier_administration/data/admin_repository.dart';
@@ -6,6 +5,7 @@ import 'package:i_entier_administration/models/provider_application.dart';
 import 'package:i_entier_administration/screens/admin_dashboard_screen.dart';
 import 'package:i_entier_administration/screens/admin_sign_in_screen.dart';
 import 'package:i_entier_administration/theme/admin_theme.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
@@ -150,10 +150,13 @@ void main() {
 Widget _dashboard(_FakeAdminRepository repository) => MaterialApp(
   theme: buildAdminTheme(),
   home: AdminDashboardScreen(
-    user: _FakeUser(
-      uid: 'admin-1',
+    user: User(
+      id: 'admin-1',
+      appMetadata: const {},
+      userMetadata: const {'full_name': 'Administration i-ENTIER'},
+      aud: 'authenticated',
       email: 'admin@ientier.ht',
-      displayName: 'Administration i-ENTIER',
+      createdAt: DateTime(2026, 7, 20).toIso8601String(),
     ),
     repository: repository,
   ),
@@ -193,26 +196,6 @@ ProviderApplication _application({
   createdAt: DateTime(2026, 7, 20),
   updatedAt: DateTime(2026, 7, 22),
 );
-
-class _FakeUser implements User {
-  @override
-  final String uid;
-
-  @override
-  final String? email;
-
-  @override
-  final String? displayName;
-
-  _FakeUser({
-    required this.uid,
-    required this.email,
-    required this.displayName,
-  });
-
-  @override
-  dynamic noSuchMethod(Invocation invocation) => super.noSuchMethod(invocation);
-}
 
 class _FakeAdminRepository implements AdminRepository {
   final List<ProviderApplication> applications;

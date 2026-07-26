@@ -1,10 +1,11 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:flutter/services.dart';
 
 import 'data/admin_repository.dart';
 import 'screens/admin_dashboard_screen.dart';
 import 'screens/admin_sign_in_screen.dart';
+import 'supabase_config.dart';
 import 'theme/admin_theme.dart';
 
 class IEntierAdministrationApp extends StatelessWidget {
@@ -17,7 +18,7 @@ class IEntierAdministrationApp extends StatelessWidget {
     title: 'i-ENTIER Administration',
     debugShowCheckedModeBanner: false,
     theme: buildAdminTheme(),
-    home: AdminAuthGate(repository: repository ?? FirestoreAdminRepository()),
+    home: AdminAuthGate(repository: repository ?? SupabaseAdminRepository()),
   );
 }
 
@@ -28,7 +29,9 @@ class AdminAuthGate extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => StreamBuilder<User?>(
-    stream: FirebaseAuth.instance.authStateChanges(),
+    stream: SupabaseConfig.client.auth.onAuthStateChange.map(
+      (state) => state.session?.user,
+    ),
     builder: (context, snapshot) {
       if (snapshot.connectionState == ConnectionState.waiting) {
         return const AdminLoadingScreen();
@@ -166,7 +169,7 @@ class AdminAccessDenied extends StatelessWidget {
                       label: const Text('Copier l’identifiant'),
                     ),
                     TextButton.icon(
-                      onPressed: () => FirebaseAuth.instance.signOut(),
+                      onPressed: () => SupabaseConfig.client.auth.signOut(),
                       icon: const Icon(Icons.logout_rounded, size: 18),
                       label: const Text('Changer de compte'),
                     ),
@@ -209,12 +212,12 @@ class AdminAccessError extends StatelessWidget {
                 ),
                 const SizedBox(height: 8),
                 const Text(
-                  'Vérifiez la connexion et les règles de la collection administrators.',
+                  'Vérifiez la connexion et les politiques de la table administrators.',
                   textAlign: TextAlign.center,
                 ),
                 const SizedBox(height: 16),
                 TextButton(
-                  onPressed: () => FirebaseAuth.instance.signOut(),
+                  onPressed: () => SupabaseConfig.client.auth.signOut(),
                   child: const Text('Changer de compte'),
                 ),
               ],
