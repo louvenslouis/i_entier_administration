@@ -2,20 +2,26 @@ import 'package:flutter/material.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 import '../data/admin_repository.dart';
+import '../data/diagnostic_config_repository.dart';
 import '../models/provider_application.dart';
 import '../supabase_config.dart';
 import '../theme/admin_theme.dart';
+import 'diagnostic_manager_screen.dart';
 
 enum _StatusFilter { all, pending, approved, rejected }
+
+enum _AdminSection { applications, diagnostics }
 
 class AdminDashboardScreen extends StatefulWidget {
   final User user;
   final AdminRepository repository;
+  final DiagnosticConfigRepository? diagnosticRepository;
 
   const AdminDashboardScreen({
     super.key,
     required this.user,
     required this.repository,
+    this.diagnosticRepository,
   });
 
   @override
@@ -29,6 +35,12 @@ class _AdminDashboardScreenState extends State<AdminDashboardScreen> {
   ApplicationType? _typeFilter;
   String _query = '';
   final Set<String> _reviewing = {};
+  _AdminSection _selectedSection = _AdminSection.applications;
+  DiagnosticConfigRepository? _defaultDiagnosticRepository;
+
+  DiagnosticConfigRepository get _diagnosticRepository =>
+      widget.diagnosticRepository ??
+      (_defaultDiagnosticRepository ??= SupabaseDiagnosticConfigRepository());
 
   @override
   void initState() {
@@ -150,6 +162,41 @@ class _AdminDashboardScreenState extends State<AdminDashboardScreen> {
     );
   }
 
+  Widget _applicationsView() => StreamBuilder<List<ProviderApplication>>(
+    stream: _applications,
+    builder: (context, snapshot) {
+      if (snapshot.connectionState == ConnectionState.waiting) {
+        return const Center(
+          child: CircularProgressIndicator(color: AdminColors.primary),
+        );
+      }
+      if (snapshot.hasError) return const _ApplicationsError();
+      final applications = snapshot.data ?? const [];
+      return _DashboardContent(
+        applications: applications,
+        searchController: _searchController,
+        query: _query,
+        statusFilter: _statusFilter,
+        typeFilter: _typeFilter,
+        reviewing: _reviewing,
+        onQueryChanged: (value) => setState(() => _query = value),
+        onStatusChanged: (value) => setState(() => _statusFilter = value),
+        onTypeChanged: (value) => setState(() => _typeFilter = value),
+        onOpen: _openApplication,
+        onApprove: _approve,
+        onReject: _reject,
+      );
+    },
+  );
+
+  Widget _selectedView() => switch (_selectedSection) {
+    _AdminSection.applications => _applicationsView(),
+    _AdminSection.diagnostics => DiagnosticManagerScreen(
+      user: widget.user,
+      repository: _diagnosticRepository,
+    ),
+  };
+
   @override
   Widget build(BuildContext context) => LayoutBuilder(
     builder: (context, constraints) {
@@ -158,8 +205,37 @@ class _AdminDashboardScreenState extends State<AdminDashboardScreen> {
         appBar: desktop
             ? null
             : AppBar(
-                title: const AdminBrand(),
+                title: Text(
+                  _selectedSection == _AdminSection.applications
+                      ? 'Demandes'
+                      : 'Diagnostic assisté',
+                  style: const TextStyle(fontWeight: FontWeight.w900),
+                ),
                 actions: [
+                  PopupMenuButton<_AdminSection>(
+                    tooltip: 'Changer de section',
+                    initialValue: _selectedSection,
+                    onSelected: (value) =>
+                        setState(() => _selectedSection = value),
+                    itemBuilder: (context) => const [
+                      PopupMenuItem(
+                        value: _AdminSection.applications,
+                        child: ListTile(
+                          contentPadding: EdgeInsets.zero,
+                          leading: Icon(Icons.fact_check_outlined),
+                          title: Text('Demandes'),
+                        ),
+                      ),
+                      PopupMenuItem(
+                        value: _AdminSection.diagnostics,
+                        child: ListTile(
+                          contentPadding: EdgeInsets.zero,
+                          leading: Icon(Icons.account_tree_outlined),
+                          title: Text('Diagnostic assisté'),
+                        ),
+                      ),
+                    ],
+                  ),
                   IconButton(
                     tooltip: 'Déconnexion',
                     onPressed: () => SupabaseConfig.client.auth.signOut(),
@@ -174,42 +250,12 @@ class _AdminDashboardScreenState extends State<AdminDashboardScreen> {
               if (desktop)
                 _AdminSidebar(
                   user: widget.user,
+                  selectedSection: _selectedSection,
+                  onSectionSelected: (value) =>
+                      setState(() => _selectedSection = value),
                   onSignOut: () => SupabaseConfig.client.auth.signOut(),
                 ),
-              Expanded(
-                child: StreamBuilder<List<ProviderApplication>>(
-                  stream: _applications,
-                  builder: (context, snapshot) {
-                    if (snapshot.connectionState == ConnectionState.waiting) {
-                      return const Center(
-                        child: CircularProgressIndicator(
-                          color: AdminColors.primary,
-                        ),
-                      );
-                    }
-                    if (snapshot.hasError) {
-                      return const _ApplicationsError();
-                    }
-                    final applications = snapshot.data ?? const [];
-                    return _DashboardContent(
-                      applications: applications,
-                      searchController: _searchController,
-                      query: _query,
-                      statusFilter: _statusFilter,
-                      typeFilter: _typeFilter,
-                      reviewing: _reviewing,
-                      onQueryChanged: (value) => setState(() => _query = value),
-                      onStatusChanged: (value) =>
-                          setState(() => _statusFilter = value),
-                      onTypeChanged: (value) =>
-                          setState(() => _typeFilter = value),
-                      onOpen: _openApplication,
-                      onApprove: _approve,
-                      onReject: _reject,
-                    );
-                  },
-                ),
-              ),
+              Expanded(child: _selectedView()),
             ],
           ),
         ),
@@ -312,8 +358,15 @@ class _RejectionDialogState extends State<_RejectionDialog> {
 class _AdminSidebar extends StatelessWidget {
   final User user;
   final VoidCallback onSignOut;
+  final _AdminSection selectedSection;
+  final ValueChanged<_AdminSection> onSectionSelected;
 
-  const _AdminSidebar({required this.user, required this.onSignOut});
+  const _AdminSidebar({
+    required this.user,
+    required this.onSignOut,
+    required this.selectedSection,
+    required this.onSectionSelected,
+  });
 
   @override
   Widget build(BuildContext context) => Container(
@@ -328,29 +381,18 @@ class _AdminSidebar extends StatelessWidget {
       children: [
         const AdminBrand(),
         const SizedBox(height: 42),
-        Container(
-          padding: const EdgeInsets.symmetric(horizontal: 13, vertical: 12),
-          decoration: BoxDecoration(
-            color: AdminColors.primarySoft,
-            borderRadius: BorderRadius.circular(13),
-          ),
-          child: const Row(
-            children: [
-              Icon(
-                Icons.fact_check_outlined,
-                color: AdminColors.primary,
-                size: 21,
-              ),
-              SizedBox(width: 12),
-              Text(
-                'Demandes',
-                style: TextStyle(
-                  color: AdminColors.primaryDark,
-                  fontWeight: FontWeight.w800,
-                ),
-              ),
-            ],
-          ),
+        _SidebarItem(
+          icon: Icons.fact_check_outlined,
+          label: 'Demandes',
+          selected: selectedSection == _AdminSection.applications,
+          onTap: () => onSectionSelected(_AdminSection.applications),
+        ),
+        const SizedBox(height: 7),
+        _SidebarItem(
+          icon: Icons.account_tree_outlined,
+          label: 'Diagnostic assisté',
+          selected: selectedSection == _AdminSection.diagnostics,
+          onTap: () => onSectionSelected(_AdminSection.diagnostics),
         ),
         const SizedBox(height: 22),
         Container(
@@ -433,6 +475,52 @@ class _AdminSidebar extends StatelessWidget {
           ],
         ),
       ],
+    ),
+  );
+}
+
+class _SidebarItem extends StatelessWidget {
+  final IconData icon;
+  final String label;
+  final bool selected;
+  final VoidCallback onTap;
+
+  const _SidebarItem({
+    required this.icon,
+    required this.label,
+    required this.selected,
+    required this.onTap,
+  });
+
+  @override
+  Widget build(BuildContext context) => Material(
+    color: selected ? AdminColors.primarySoft : Colors.transparent,
+    borderRadius: BorderRadius.circular(13),
+    child: InkWell(
+      onTap: onTap,
+      borderRadius: BorderRadius.circular(13),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 13, vertical: 12),
+        child: Row(
+          children: [
+            Icon(
+              icon,
+              color: selected ? AdminColors.primary : AdminColors.muted,
+              size: 21,
+            ),
+            const SizedBox(width: 12),
+            Expanded(
+              child: Text(
+                label,
+                style: TextStyle(
+                  color: selected ? AdminColors.primaryDark : AdminColors.muted,
+                  fontWeight: FontWeight.w800,
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
     ),
   );
 }

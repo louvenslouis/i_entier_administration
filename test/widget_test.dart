@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:i_entier_administration/data/admin_repository.dart';
+import 'package:i_entier_administration/data/diagnostic_config_repository.dart';
+import 'package:i_entier_administration/models/diagnostic_pathway_config.dart';
 import 'package:i_entier_administration/models/provider_application.dart';
 import 'package:i_entier_administration/screens/admin_dashboard_screen.dart';
 import 'package:i_entier_administration/screens/admin_sign_in_screen.dart';
@@ -145,9 +147,29 @@ void main() {
     expect(find.text('Consultation : 2 500'), findsOneWidget);
     expect(find.text('Chambre standard : 6 000 / nuit'), findsOneWidget);
   });
+
+  testWidgets('ouvre le gestionnaire du diagnostic depuis la navigation', (
+    tester,
+  ) async {
+    final repository = _FakeAdminRepository(const []);
+    final diagnosticRepository = _EmptyDiagnosticRepository();
+
+    await tester.pumpWidget(
+      _dashboard(repository, diagnosticRepository: diagnosticRepository),
+    );
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('Diagnostic assisté'));
+    await tester.pumpAndSettle();
+
+    expect(find.text('Gestionnaire du diagnostic assisté'), findsOneWidget);
+    expect(find.text('Créez le premier parcours'), findsOneWidget);
+  });
 }
 
-Widget _dashboard(_FakeAdminRepository repository) => MaterialApp(
+Widget _dashboard(
+  _FakeAdminRepository repository, {
+  DiagnosticConfigRepository? diagnosticRepository,
+}) => MaterialApp(
   theme: buildAdminTheme(),
   home: AdminDashboardScreen(
     user: User(
@@ -159,6 +181,7 @@ Widget _dashboard(_FakeAdminRepository repository) => MaterialApp(
       createdAt: DateTime(2026, 7, 20).toIso8601String(),
     ),
     repository: repository,
+    diagnosticRepository: diagnosticRepository,
   ),
 );
 
@@ -233,4 +256,39 @@ class _ReviewCall {
     required this.status,
     required this.reason,
   });
+}
+
+class _EmptyDiagnosticRepository implements DiagnosticConfigRepository {
+  @override
+  Stream<List<DiagnosticPathwayBundle>> watchPathways() =>
+      Stream.value(const []);
+
+  @override
+  Future<void> createPathway({
+    required DiagnosticPathwayDefinition definition,
+    required String adminUid,
+  }) async {}
+
+  @override
+  Future<void> createDraftFromPublished({
+    required DiagnosticPathwayBundle bundle,
+    required String adminUid,
+  }) async {}
+
+  @override
+  Future<void> deleteDraft(DiagnosticPathwayVersion draft) async {}
+
+  @override
+  Future<void> publishDraft({
+    required DiagnosticPathwayVersion draft,
+    required String adminUid,
+    required String changeNote,
+  }) async {}
+
+  @override
+  Future<void> saveDraft({
+    required DiagnosticPathwayVersion draft,
+    required DiagnosticPathwayDefinition definition,
+    required String adminUid,
+  }) async {}
 }
