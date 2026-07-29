@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:i_entier_administration/data/admin_repository.dart';
+import 'package:i_entier_administration/data/crowdfunding_admin_repository.dart';
 import 'package:i_entier_administration/data/diagnostic_config_repository.dart';
+import 'package:i_entier_administration/models/crowdfunding_campaign.dart';
 import 'package:i_entier_administration/models/diagnostic_pathway_config.dart';
 import 'package:i_entier_administration/models/provider_application.dart';
 import 'package:i_entier_administration/screens/admin_dashboard_screen.dart';
@@ -164,11 +166,30 @@ void main() {
     expect(find.text('Gestionnaire du diagnostic assisté'), findsOneWidget);
     expect(find.text('Créez le premier parcours'), findsOneWidget);
   });
+
+  testWidgets('ouvre le contrôle du financement solidaire', (tester) async {
+    final repository = _FakeAdminRepository(const []);
+    final crowdfundingRepository = _EmptyCrowdfundingRepository();
+
+    await tester.pumpWidget(
+      _dashboard(repository, crowdfundingRepository: crowdfundingRepository),
+    );
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('Financement solidaire'));
+    await tester.pumpAndSettle();
+
+    expect(
+      find.text('Contrôle des campagnes et des paiements'),
+      findsOneWidget,
+    );
+    expect(find.text('Aucune campagne dans cette vue'), findsOneWidget);
+  });
 }
 
 Widget _dashboard(
   _FakeAdminRepository repository, {
   DiagnosticConfigRepository? diagnosticRepository,
+  CrowdfundingAdminRepository? crowdfundingRepository,
 }) => MaterialApp(
   theme: buildAdminTheme(),
   home: AdminDashboardScreen(
@@ -182,6 +203,7 @@ Widget _dashboard(
     ),
     repository: repository,
     diagnosticRepository: diagnosticRepository,
+    crowdfundingRepository: crowdfundingRepository,
   ),
 );
 
@@ -290,5 +312,30 @@ class _EmptyDiagnosticRepository implements DiagnosticConfigRepository {
     required DiagnosticPathwayVersion draft,
     required DiagnosticPathwayDefinition definition,
     required String adminUid,
+  }) async {}
+}
+
+class _EmptyCrowdfundingRepository implements CrowdfundingAdminRepository {
+  @override
+  Stream<List<AdminCrowdfundingCampaign>> watchCampaigns() =>
+      Stream.value(const []);
+
+  @override
+  Stream<List<AdminCrowdfundingContribution>> watchPendingContributions() =>
+      Stream.value(const []);
+
+  @override
+  Future<void> reviewCampaign({
+    required AdminCrowdfundingCampaign campaign,
+    required String adminUid,
+    required CrowdfundingReviewStatus status,
+    String reason = '',
+  }) async {}
+
+  @override
+  Future<void> confirmContribution({
+    required AdminCrowdfundingContribution contribution,
+    required String adminUid,
+    required String processorReference,
   }) async {}
 }

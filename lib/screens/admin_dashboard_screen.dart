@@ -2,26 +2,30 @@ import 'package:flutter/material.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 import '../data/admin_repository.dart';
+import '../data/crowdfunding_admin_repository.dart';
 import '../data/diagnostic_config_repository.dart';
 import '../models/provider_application.dart';
 import '../supabase_config.dart';
 import '../theme/admin_theme.dart';
+import 'crowdfunding_manager_screen.dart';
 import 'diagnostic_manager_screen.dart';
 
 enum _StatusFilter { all, pending, approved, rejected }
 
-enum _AdminSection { applications, diagnostics }
+enum _AdminSection { applications, crowdfunding, diagnostics }
 
 class AdminDashboardScreen extends StatefulWidget {
   final User user;
   final AdminRepository repository;
   final DiagnosticConfigRepository? diagnosticRepository;
+  final CrowdfundingAdminRepository? crowdfundingRepository;
 
   const AdminDashboardScreen({
     super.key,
     required this.user,
     required this.repository,
     this.diagnosticRepository,
+    this.crowdfundingRepository,
   });
 
   @override
@@ -37,10 +41,16 @@ class _AdminDashboardScreenState extends State<AdminDashboardScreen> {
   final Set<String> _reviewing = {};
   _AdminSection _selectedSection = _AdminSection.applications;
   DiagnosticConfigRepository? _defaultDiagnosticRepository;
+  CrowdfundingAdminRepository? _defaultCrowdfundingRepository;
 
   DiagnosticConfigRepository get _diagnosticRepository =>
       widget.diagnosticRepository ??
       (_defaultDiagnosticRepository ??= SupabaseDiagnosticConfigRepository());
+
+  CrowdfundingAdminRepository get _crowdfundingRepository =>
+      widget.crowdfundingRepository ??
+      (_defaultCrowdfundingRepository ??=
+          SupabaseCrowdfundingAdminRepository());
 
   @override
   void initState() {
@@ -191,6 +201,10 @@ class _AdminDashboardScreenState extends State<AdminDashboardScreen> {
 
   Widget _selectedView() => switch (_selectedSection) {
     _AdminSection.applications => _applicationsView(),
+    _AdminSection.crowdfunding => CrowdfundingManagerScreen(
+      user: widget.user,
+      repository: _crowdfundingRepository,
+    ),
     _AdminSection.diagnostics => DiagnosticManagerScreen(
       user: widget.user,
       repository: _diagnosticRepository,
@@ -205,12 +219,11 @@ class _AdminDashboardScreenState extends State<AdminDashboardScreen> {
         appBar: desktop
             ? null
             : AppBar(
-                title: Text(
-                  _selectedSection == _AdminSection.applications
-                      ? 'Demandes'
-                      : 'Diagnostic assisté',
-                  style: const TextStyle(fontWeight: FontWeight.w900),
-                ),
+                title: Text(switch (_selectedSection) {
+                  _AdminSection.applications => 'Demandes',
+                  _AdminSection.crowdfunding => 'Financement solidaire',
+                  _AdminSection.diagnostics => 'Diagnostic assisté',
+                }, style: const TextStyle(fontWeight: FontWeight.w900)),
                 actions: [
                   PopupMenuButton<_AdminSection>(
                     tooltip: 'Changer de section',
@@ -224,6 +237,14 @@ class _AdminDashboardScreenState extends State<AdminDashboardScreen> {
                           contentPadding: EdgeInsets.zero,
                           leading: Icon(Icons.fact_check_outlined),
                           title: Text('Demandes'),
+                        ),
+                      ),
+                      PopupMenuItem(
+                        value: _AdminSection.crowdfunding,
+                        child: ListTile(
+                          contentPadding: EdgeInsets.zero,
+                          leading: Icon(Icons.volunteer_activism_outlined),
+                          title: Text('Financement solidaire'),
                         ),
                       ),
                       PopupMenuItem(
@@ -386,6 +407,13 @@ class _AdminSidebar extends StatelessWidget {
           label: 'Demandes',
           selected: selectedSection == _AdminSection.applications,
           onTap: () => onSectionSelected(_AdminSection.applications),
+        ),
+        const SizedBox(height: 7),
+        _SidebarItem(
+          icon: Icons.volunteer_activism_outlined,
+          label: 'Financement solidaire',
+          selected: selectedSection == _AdminSection.crowdfunding,
+          onTap: () => onSectionSelected(_AdminSection.crowdfunding),
         ),
         const SizedBox(height: 7),
         _SidebarItem(
