@@ -5,6 +5,7 @@ import '../data/admin_repository.dart';
 import '../data/crowdfunding_admin_repository.dart';
 import '../data/diagnostic_config_repository.dart';
 import '../data/health_credit_admin_repository.dart';
+import '../data/insurance_coverage_admin_repository.dart';
 import '../data/mobile_clinic_admin_repository.dart';
 import '../data/pharmacy_admin_repository.dart';
 import '../data/rescue_admin_repository.dart';
@@ -15,6 +16,7 @@ import '../theme/admin_theme.dart';
 import 'crowdfunding_manager_screen.dart';
 import 'diagnostic_manager_screen.dart';
 import 'health_credit_manager_screen.dart';
+import 'insurance_coverage_manager_screen.dart';
 import 'mobile_clinic_manager_screen.dart';
 import 'pharmacy_manager_screen.dart';
 import 'rescue_manager_screen.dart';
@@ -26,6 +28,7 @@ enum _AdminSection {
   applications,
   pharmacies,
   traditionalMedicine,
+  insuranceCoverages,
   healthCredit,
   rescue,
   mobileClinics,
@@ -40,6 +43,7 @@ class AdminDashboardScreen extends StatefulWidget {
   final CrowdfundingAdminRepository? crowdfundingRepository;
   final RescueAdminRepository? rescueRepository;
   final HealthCreditAdminRepository? healthCreditRepository;
+  final InsuranceCoverageAdminRepository? insuranceCoverageRepository;
   final MobileClinicAdminRepository? mobileClinicRepository;
   final PharmacyAdminRepository? pharmacyRepository;
   final TraditionalMedicineAdminRepository? traditionalMedicineRepository;
@@ -52,6 +56,7 @@ class AdminDashboardScreen extends StatefulWidget {
     this.crowdfundingRepository,
     this.rescueRepository,
     this.healthCreditRepository,
+    this.insuranceCoverageRepository,
     this.mobileClinicRepository,
     this.pharmacyRepository,
     this.traditionalMedicineRepository,
@@ -73,6 +78,7 @@ class _AdminDashboardScreenState extends State<AdminDashboardScreen> {
   CrowdfundingAdminRepository? _defaultCrowdfundingRepository;
   RescueAdminRepository? _defaultRescueRepository;
   HealthCreditAdminRepository? _defaultHealthCreditRepository;
+  InsuranceCoverageAdminRepository? _defaultInsuranceCoverageRepository;
   MobileClinicAdminRepository? _defaultMobileClinicRepository;
   PharmacyAdminRepository? _defaultPharmacyRepository;
   TraditionalMedicineAdminRepository? _defaultTraditionalMedicineRepository;
@@ -94,6 +100,11 @@ class _AdminDashboardScreenState extends State<AdminDashboardScreen> {
       widget.healthCreditRepository ??
       (_defaultHealthCreditRepository ??=
           SupabaseHealthCreditAdminRepository());
+
+  InsuranceCoverageAdminRepository get _insuranceCoverageRepository =>
+      widget.insuranceCoverageRepository ??
+      (_defaultInsuranceCoverageRepository ??=
+          SupabaseInsuranceCoverageAdminRepository());
 
   MobileClinicAdminRepository get _mobileClinicRepository =>
       widget.mobileClinicRepository ??
@@ -266,6 +277,9 @@ class _AdminDashboardScreenState extends State<AdminDashboardScreen> {
       adminId: widget.user.uid,
       repository: _traditionalMedicineRepository,
     ),
+    _AdminSection.insuranceCoverages => InsuranceCoverageManagerScreen(
+      repository: _insuranceCoverageRepository,
+    ),
     _AdminSection.healthCredit => HealthCreditManagerScreen(
       user: widget.user,
       repository: _healthCreditRepository,
@@ -301,6 +315,7 @@ class _AdminDashboardScreenState extends State<AdminDashboardScreen> {
                   _AdminSection.pharmacies => 'Pharmacies',
                   _AdminSection.traditionalMedicine =>
                     'Médecine Traditionnelle',
+                  _AdminSection.insuranceCoverages => 'Couvertures OFATMA',
                   _AdminSection.healthCredit => 'Crédit Santé',
                   _AdminSection.rescue => 'I-Entier Rescue',
                   _AdminSection.mobileClinics => 'Clinique Mobile',
@@ -336,6 +351,14 @@ class _AdminDashboardScreenState extends State<AdminDashboardScreen> {
                           contentPadding: EdgeInsets.zero,
                           leading: Icon(Icons.spa_outlined),
                           title: Text('Médecine Traditionnelle'),
+                        ),
+                      ),
+                      PopupMenuItem(
+                        value: _AdminSection.insuranceCoverages,
+                        child: ListTile(
+                          contentPadding: EdgeInsets.zero,
+                          leading: Icon(Icons.verified_user_outlined),
+                          title: Text('Couvertures OFATMA'),
                         ),
                       ),
                       PopupMenuItem(
@@ -544,6 +567,13 @@ class _AdminSidebar extends StatelessWidget {
           label: 'Médecine Traditionnelle',
           selected: selectedSection == _AdminSection.traditionalMedicine,
           onTap: () => onSectionSelected(_AdminSection.traditionalMedicine),
+        ),
+        const SizedBox(height: 7),
+        _SidebarItem(
+          icon: Icons.verified_user_outlined,
+          label: 'Couvertures OFATMA',
+          selected: selectedSection == _AdminSection.insuranceCoverages,
+          onTap: () => onSectionSelected(_AdminSection.insuranceCoverages),
         ),
         const SizedBox(height: 7),
         _SidebarItem(
