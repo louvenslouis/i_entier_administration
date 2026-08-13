@@ -10,6 +10,8 @@ les inscriptions professionnelles de l’écosystème i-ENTIER.
 - recherche et filtrage des dossiers professionnels ;
 - approbation ou refus avec journal immuable ;
 - revue atomique via `ientier.review_provider`.
+- régulation des pharmacies : licence, activation, suspension ou refus ;
+- suivi des alertes de stock, commandes ouvertes et ventes mensuelles ;
 - vérification des campagnes de financement solidaire ;
 - rapprochement des contributions avec leur référence de paiement.
 

@@ -4,21 +4,45 @@ import 'package:supabase_flutter/supabase_flutter.dart';
 import '../data/admin_repository.dart';
 import '../data/crowdfunding_admin_repository.dart';
 import '../data/diagnostic_config_repository.dart';
+import '../data/health_credit_admin_repository.dart';
+import '../data/mobile_clinic_admin_repository.dart';
+import '../data/pharmacy_admin_repository.dart';
+import '../data/rescue_admin_repository.dart';
+import '../data/traditional_medicine_admin_repository.dart';
 import '../models/provider_application.dart';
 import '../supabase_config.dart';
 import '../theme/admin_theme.dart';
 import 'crowdfunding_manager_screen.dart';
 import 'diagnostic_manager_screen.dart';
+import 'health_credit_manager_screen.dart';
+import 'mobile_clinic_manager_screen.dart';
+import 'pharmacy_manager_screen.dart';
+import 'rescue_manager_screen.dart';
+import 'traditional_medicine_manager_screen.dart';
 
 enum _StatusFilter { all, pending, approved, rejected }
 
-enum _AdminSection { applications, crowdfunding, diagnostics }
+enum _AdminSection {
+  applications,
+  pharmacies,
+  traditionalMedicine,
+  healthCredit,
+  rescue,
+  mobileClinics,
+  crowdfunding,
+  diagnostics,
+}
 
 class AdminDashboardScreen extends StatefulWidget {
   final User user;
   final AdminRepository repository;
   final DiagnosticConfigRepository? diagnosticRepository;
   final CrowdfundingAdminRepository? crowdfundingRepository;
+  final RescueAdminRepository? rescueRepository;
+  final HealthCreditAdminRepository? healthCreditRepository;
+  final MobileClinicAdminRepository? mobileClinicRepository;
+  final PharmacyAdminRepository? pharmacyRepository;
+  final TraditionalMedicineAdminRepository? traditionalMedicineRepository;
 
   const AdminDashboardScreen({
     super.key,
@@ -26,6 +50,11 @@ class AdminDashboardScreen extends StatefulWidget {
     required this.repository,
     this.diagnosticRepository,
     this.crowdfundingRepository,
+    this.rescueRepository,
+    this.healthCreditRepository,
+    this.mobileClinicRepository,
+    this.pharmacyRepository,
+    this.traditionalMedicineRepository,
   });
 
   @override
@@ -42,6 +71,11 @@ class _AdminDashboardScreenState extends State<AdminDashboardScreen> {
   _AdminSection _selectedSection = _AdminSection.applications;
   DiagnosticConfigRepository? _defaultDiagnosticRepository;
   CrowdfundingAdminRepository? _defaultCrowdfundingRepository;
+  RescueAdminRepository? _defaultRescueRepository;
+  HealthCreditAdminRepository? _defaultHealthCreditRepository;
+  MobileClinicAdminRepository? _defaultMobileClinicRepository;
+  PharmacyAdminRepository? _defaultPharmacyRepository;
+  TraditionalMedicineAdminRepository? _defaultTraditionalMedicineRepository;
 
   DiagnosticConfigRepository get _diagnosticRepository =>
       widget.diagnosticRepository ??
@@ -51,6 +85,29 @@ class _AdminDashboardScreenState extends State<AdminDashboardScreen> {
       widget.crowdfundingRepository ??
       (_defaultCrowdfundingRepository ??=
           SupabaseCrowdfundingAdminRepository());
+
+  RescueAdminRepository get _rescueRepository =>
+      widget.rescueRepository ??
+      (_defaultRescueRepository ??= SupabaseRescueAdminRepository());
+
+  HealthCreditAdminRepository get _healthCreditRepository =>
+      widget.healthCreditRepository ??
+      (_defaultHealthCreditRepository ??=
+          SupabaseHealthCreditAdminRepository());
+
+  MobileClinicAdminRepository get _mobileClinicRepository =>
+      widget.mobileClinicRepository ??
+      (_defaultMobileClinicRepository ??=
+          SupabaseMobileClinicAdminRepository());
+
+  PharmacyAdminRepository get _pharmacyRepository =>
+      widget.pharmacyRepository ??
+      (_defaultPharmacyRepository ??= SupabasePharmacyAdminRepository());
+
+  TraditionalMedicineAdminRepository get _traditionalMedicineRepository =>
+      widget.traditionalMedicineRepository ??
+      (_defaultTraditionalMedicineRepository ??=
+          SupabaseTraditionalMedicineAdminRepository());
 
   @override
   void initState() {
@@ -201,6 +258,26 @@ class _AdminDashboardScreenState extends State<AdminDashboardScreen> {
 
   Widget _selectedView() => switch (_selectedSection) {
     _AdminSection.applications => _applicationsView(),
+    _AdminSection.pharmacies => PharmacyManagerScreen(
+      adminId: widget.user.uid,
+      repository: _pharmacyRepository,
+    ),
+    _AdminSection.traditionalMedicine => TraditionalMedicineManagerScreen(
+      adminId: widget.user.uid,
+      repository: _traditionalMedicineRepository,
+    ),
+    _AdminSection.healthCredit => HealthCreditManagerScreen(
+      user: widget.user,
+      repository: _healthCreditRepository,
+    ),
+    _AdminSection.rescue => RescueManagerScreen(
+      user: widget.user,
+      repository: _rescueRepository,
+    ),
+    _AdminSection.mobileClinics => MobileClinicManagerScreen(
+      user: widget.user,
+      repository: _mobileClinicRepository,
+    ),
     _AdminSection.crowdfunding => CrowdfundingManagerScreen(
       user: widget.user,
       repository: _crowdfundingRepository,
@@ -221,6 +298,12 @@ class _AdminDashboardScreenState extends State<AdminDashboardScreen> {
             : AppBar(
                 title: Text(switch (_selectedSection) {
                   _AdminSection.applications => 'Demandes',
+                  _AdminSection.pharmacies => 'Pharmacies',
+                  _AdminSection.traditionalMedicine =>
+                    'Médecine Traditionnelle',
+                  _AdminSection.healthCredit => 'Crédit Santé',
+                  _AdminSection.rescue => 'I-Entier Rescue',
+                  _AdminSection.mobileClinics => 'Clinique Mobile',
                   _AdminSection.crowdfunding => 'Financement solidaire',
                   _AdminSection.diagnostics => 'Diagnostic assisté',
                 }, style: const TextStyle(fontWeight: FontWeight.w900)),
@@ -237,6 +320,46 @@ class _AdminDashboardScreenState extends State<AdminDashboardScreen> {
                           contentPadding: EdgeInsets.zero,
                           leading: Icon(Icons.fact_check_outlined),
                           title: Text('Demandes'),
+                        ),
+                      ),
+                      PopupMenuItem(
+                        value: _AdminSection.pharmacies,
+                        child: ListTile(
+                          contentPadding: EdgeInsets.zero,
+                          leading: Icon(Icons.local_pharmacy_outlined),
+                          title: Text('Pharmacies'),
+                        ),
+                      ),
+                      PopupMenuItem(
+                        value: _AdminSection.traditionalMedicine,
+                        child: ListTile(
+                          contentPadding: EdgeInsets.zero,
+                          leading: Icon(Icons.spa_outlined),
+                          title: Text('Médecine Traditionnelle'),
+                        ),
+                      ),
+                      PopupMenuItem(
+                        value: _AdminSection.healthCredit,
+                        child: ListTile(
+                          contentPadding: EdgeInsets.zero,
+                          leading: Icon(Icons.credit_score_outlined),
+                          title: Text('Crédit Santé'),
+                        ),
+                      ),
+                      PopupMenuItem(
+                        value: _AdminSection.rescue,
+                        child: ListTile(
+                          contentPadding: EdgeInsets.zero,
+                          leading: Icon(Icons.health_and_safety_outlined),
+                          title: Text('I-Entier Rescue'),
+                        ),
+                      ),
+                      PopupMenuItem(
+                        value: _AdminSection.mobileClinics,
+                        child: ListTile(
+                          contentPadding: EdgeInsets.zero,
+                          leading: Icon(Icons.local_shipping_outlined),
+                          title: Text('Clinique Mobile'),
                         ),
                       ),
                       PopupMenuItem(
@@ -407,6 +530,41 @@ class _AdminSidebar extends StatelessWidget {
           label: 'Demandes',
           selected: selectedSection == _AdminSection.applications,
           onTap: () => onSectionSelected(_AdminSection.applications),
+        ),
+        const SizedBox(height: 7),
+        _SidebarItem(
+          icon: Icons.local_pharmacy_outlined,
+          label: 'Pharmacies',
+          selected: selectedSection == _AdminSection.pharmacies,
+          onTap: () => onSectionSelected(_AdminSection.pharmacies),
+        ),
+        const SizedBox(height: 7),
+        _SidebarItem(
+          icon: Icons.spa_outlined,
+          label: 'Médecine Traditionnelle',
+          selected: selectedSection == _AdminSection.traditionalMedicine,
+          onTap: () => onSectionSelected(_AdminSection.traditionalMedicine),
+        ),
+        const SizedBox(height: 7),
+        _SidebarItem(
+          icon: Icons.credit_score_outlined,
+          label: 'Crédit Santé',
+          selected: selectedSection == _AdminSection.healthCredit,
+          onTap: () => onSectionSelected(_AdminSection.healthCredit),
+        ),
+        const SizedBox(height: 7),
+        _SidebarItem(
+          icon: Icons.health_and_safety_outlined,
+          label: 'I-Entier Rescue',
+          selected: selectedSection == _AdminSection.rescue,
+          onTap: () => onSectionSelected(_AdminSection.rescue),
+        ),
+        const SizedBox(height: 7),
+        _SidebarItem(
+          icon: Icons.local_shipping_outlined,
+          label: 'Clinique Mobile',
+          selected: selectedSection == _AdminSection.mobileClinics,
+          onTap: () => onSectionSelected(_AdminSection.mobileClinics),
         ),
         const SizedBox(height: 7),
         _SidebarItem(
