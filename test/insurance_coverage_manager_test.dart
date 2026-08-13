@@ -48,17 +48,35 @@ void main() {
 
     expect(find.text('Dossier OFATMA — Marie Joseph'), findsOneWidget);
     expect(
-      find.textContaining('validation ou le refus reste réservé'),
+      find.textContaining('vous pouvez valider ou refuser'),
       findsOneWidget,
     );
+
+    final approve = find.byKey(
+      const ValueKey('admin-approve-coverage-coverage-1'),
+    );
+    await tester.ensureVisible(approve);
+    await tester.tap(approve);
+    await tester.pumpAndSettle();
+
+    expect(find.text('Valider la couverture OFATMA'), findsOneWidget);
+    await tester.tap(
+      find.byKey(const ValueKey('confirm-admin-insurance-approval')),
+    );
+    await tester.pumpAndSettle();
+
+    expect(repository.reviews, hasLength(1));
+    expect(repository.reviews.single.approve, isTrue);
+    expect(repository.reviews.single.validUntil, isNotNull);
   });
 }
 
 class _FakeInsuranceCoverageAdminRepository
     implements InsuranceCoverageAdminRepository {
   final List<InsuranceCoverageAdminRequest> coverages;
+  final List<_ReviewCall> reviews = [];
 
-  const _FakeInsuranceCoverageAdminRepository(this.coverages);
+  _FakeInsuranceCoverageAdminRepository(this.coverages);
 
   @override
   Stream<List<InsuranceCoverageAdminRequest>> watchCoverages() =>
@@ -67,4 +85,33 @@ class _FakeInsuranceCoverageAdminRepository
   @override
   Future<String> createCardUrl(String storagePath) async =>
       'https://example.test/$storagePath';
+
+  @override
+  Future<void> reviewCoverage({
+    required String coverageId,
+    required bool approve,
+    required String reason,
+    DateTime? validUntil,
+  }) async => reviews.add(
+    _ReviewCall(
+      coverageId: coverageId,
+      approve: approve,
+      reason: reason,
+      validUntil: validUntil,
+    ),
+  );
+}
+
+class _ReviewCall {
+  final String coverageId;
+  final bool approve;
+  final String reason;
+  final DateTime? validUntil;
+
+  const _ReviewCall({
+    required this.coverageId,
+    required this.approve,
+    required this.reason,
+    required this.validUntil,
+  });
 }

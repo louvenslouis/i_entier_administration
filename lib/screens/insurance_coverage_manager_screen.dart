@@ -368,7 +368,7 @@ class _CoverageTile extends StatelessWidget {
   }
 }
 
-class _CoverageDetailDialog extends StatelessWidget {
+class _CoverageDetailDialog extends StatefulWidget {
   final InsuranceCoverageAdminRequest coverage;
   final InsuranceCoverageAdminRepository repository;
 
@@ -377,10 +377,85 @@ class _CoverageDetailDialog extends StatelessWidget {
     required this.repository,
   });
 
-  Future<List<String>> _urls() => Future.wait([
-    repository.createCardUrl(coverage.frontPath),
-    repository.createCardUrl(coverage.backPath),
-  ]);
+  @override
+  State<_CoverageDetailDialog> createState() => _CoverageDetailDialogState();
+}
+
+class _CoverageDetailDialogState extends State<_CoverageDetailDialog> {
+  late final Future<List<String>> _cardUrls;
+  bool _saving = false;
+
+  InsuranceCoverageAdminRequest get coverage => widget.coverage;
+
+  @override
+  void initState() {
+    super.initState();
+    _cardUrls = Future.wait([
+      widget.repository.createCardUrl(coverage.frontPath),
+      widget.repository.createCardUrl(coverage.backPath),
+    ]);
+  }
+
+  Future<void> _approve() async {
+    final decision = await showDialog<_CoverageApprovalDecision>(
+      context: context,
+      builder: (_) => const _CoverageApprovalDialog(),
+    );
+    if (decision == null) return;
+    await _review(
+      approve: true,
+      reason: decision.note,
+      validUntil: decision.validUntil,
+    );
+  }
+
+  Future<void> _reject() async {
+    final reason = await showDialog<String>(
+      context: context,
+      builder: (_) => const _CoverageRejectionDialog(),
+    );
+    if (reason == null) return;
+    await _review(approve: false, reason: reason);
+  }
+
+  Future<void> _review({
+    required bool approve,
+    required String reason,
+    DateTime? validUntil,
+  }) async {
+    setState(() => _saving = true);
+    try {
+      await widget.repository.reviewCoverage(
+        coverageId: coverage.id,
+        approve: approve,
+        reason: reason,
+        validUntil: validUntil,
+      );
+      if (!mounted) return;
+      Navigator.pop(context);
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(
+            approve
+                ? 'La couverture OFATMA est maintenant valide.'
+                : 'Le refus a été transmis au patient.',
+          ),
+        ),
+      );
+    } catch (_) {
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text(
+              'La décision n’a pas pu être enregistrée. Vérifiez vos droits administrateur.',
+            ),
+          ),
+        );
+      }
+    } finally {
+      if (mounted) setState(() => _saving = false);
+    }
+  }
 
   @override
   Widget build(BuildContext context) => Dialog(
@@ -427,7 +502,7 @@ class _CoverageDetailDialog extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   FutureBuilder<List<String>>(
-                    future: _urls(),
+                    future: _cardUrls,
                     builder: (context, snapshot) {
                       if (snapshot.connectionState == ConnectionState.waiting) {
                         return const SizedBox(
@@ -482,18 +557,20 @@ class _CoverageDetailDialog extends StatelessWidget {
                       color: AdminColors.primarySoft,
                       borderRadius: BorderRadius.circular(14),
                     ),
-                    child: const Row(
+                    child: Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Icon(
+                        const Icon(
                           Icons.info_outline_rounded,
                           color: AdminColors.primary,
                         ),
-                        SizedBox(width: 10),
+                        const SizedBox(width: 10),
                         Expanded(
                           child: Text(
-                            'La validation ou le refus reste réservé à un professionnel vérifié dans I-ENTIER Professionnel.',
-                            style: TextStyle(
+                            coverage.pending
+                                ? 'En tant qu’administrateur actif, vous pouvez valider ou refuser cette couverture après contrôle des deux faces.'
+                                : 'Ce dossier a déjà été traité et ne peut plus recevoir une nouvelle décision.',
+                            style: const TextStyle(
                               color: AdminColors.primaryDark,
                               fontWeight: FontWeight.w700,
                             ),
@@ -509,6 +586,52 @@ class _CoverageDetailDialog extends StatelessWidget {
                       style: const TextStyle(color: AdminColors.muted),
                     ),
                   ],
+                  if (coverage.pending) ...[
+                    const SizedBox(height: 18),
+                    LayoutBuilder(
+                      builder: (context, constraints) {
+                        final reject = OutlinedButton.icon(
+                          key: ValueKey('admin-reject-coverage-${coverage.id}'),
+                          onPressed: _saving ? null : _reject,
+                          icon: const Icon(Icons.close_rounded),
+                          label: const Text('Refuser'),
+                        );
+                        final approve = FilledButton.icon(
+                          key: ValueKey(
+                            'admin-approve-coverage-${coverage.id}',
+                          ),
+                          onPressed: _saving ? null : _approve,
+                          icon: _saving
+                              ? const SizedBox.square(
+                                  dimension: 17,
+                                  child: CircularProgressIndicator(
+                                    strokeWidth: 2,
+                                    color: Colors.white,
+                                  ),
+                                )
+                              : const Icon(Icons.verified_rounded),
+                          label: const Text('Valider'),
+                        );
+                        if (constraints.maxWidth < 520) {
+                          return Column(
+                            crossAxisAlignment: CrossAxisAlignment.stretch,
+                            children: [
+                              reject,
+                              const SizedBox(height: 10),
+                              approve,
+                            ],
+                          );
+                        }
+                        return Row(
+                          children: [
+                            Expanded(child: reject),
+                            const SizedBox(width: 12),
+                            Expanded(child: approve),
+                          ],
+                        );
+                      },
+                    ),
+                  ],
                 ],
               ),
             ),
@@ -516,6 +639,155 @@ class _CoverageDetailDialog extends StatelessWidget {
         ],
       ),
     ),
+  );
+}
+
+class _CoverageApprovalDecision {
+  final DateTime validUntil;
+  final String note;
+
+  const _CoverageApprovalDecision({
+    required this.validUntil,
+    required this.note,
+  });
+}
+
+class _CoverageApprovalDialog extends StatefulWidget {
+  const _CoverageApprovalDialog();
+
+  @override
+  State<_CoverageApprovalDialog> createState() =>
+      _CoverageApprovalDialogState();
+}
+
+class _CoverageApprovalDialogState extends State<_CoverageApprovalDialog> {
+  final _note = TextEditingController();
+  late DateTime _validUntil;
+
+  @override
+  void initState() {
+    super.initState();
+    final now = DateUtils.dateOnly(DateTime.now());
+    _validUntil = DateTime(now.year + 1, now.month, now.day);
+  }
+
+  @override
+  void dispose() {
+    _note.dispose();
+    super.dispose();
+  }
+
+  Future<void> _pickDate() async {
+    final now = DateUtils.dateOnly(DateTime.now());
+    final value = await showDatePicker(
+      context: context,
+      initialDate: _validUntil,
+      firstDate: now,
+      lastDate: DateTime(now.year + 10, now.month, now.day),
+      helpText: 'Fin de validité OFATMA',
+    );
+    if (value != null) setState(() => _validUntil = value);
+  }
+
+  @override
+  Widget build(BuildContext context) => AlertDialog(
+    title: const Text('Valider la couverture OFATMA'),
+    content: SizedBox(
+      width: 440,
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          ListTile(
+            key: const ValueKey('admin-insurance-valid-until'),
+            contentPadding: EdgeInsets.zero,
+            onTap: _pickDate,
+            leading: const Icon(Icons.event_available_outlined),
+            title: const Text('Date de fin de validité'),
+            subtitle: Text(_date(_validUntil)),
+            trailing: const Icon(Icons.edit_calendar_outlined),
+          ),
+          const SizedBox(height: 10),
+          TextField(
+            controller: _note,
+            maxLength: 1000,
+            maxLines: 3,
+            decoration: const InputDecoration(
+              labelText: 'Note de contrôle (facultative)',
+            ),
+          ),
+        ],
+      ),
+    ),
+    actions: [
+      TextButton(
+        onPressed: () => Navigator.pop(context),
+        child: const Text('Annuler'),
+      ),
+      FilledButton(
+        key: const ValueKey('confirm-admin-insurance-approval'),
+        onPressed: () => Navigator.pop(
+          context,
+          _CoverageApprovalDecision(
+            validUntil: _validUntil,
+            note: _note.text.trim(),
+          ),
+        ),
+        child: const Text('Confirmer la validité'),
+      ),
+    ],
+  );
+}
+
+class _CoverageRejectionDialog extends StatefulWidget {
+  const _CoverageRejectionDialog();
+
+  @override
+  State<_CoverageRejectionDialog> createState() =>
+      _CoverageRejectionDialogState();
+}
+
+class _CoverageRejectionDialogState extends State<_CoverageRejectionDialog> {
+  final _reason = TextEditingController();
+
+  @override
+  void dispose() {
+    _reason.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) => AlertDialog(
+    title: const Text('Refuser la carte OFATMA'),
+    content: SizedBox(
+      width: 440,
+      child: TextField(
+        key: const ValueKey('admin-insurance-rejection-reason'),
+        controller: _reason,
+        autofocus: true,
+        maxLength: 1000,
+        minLines: 3,
+        maxLines: 5,
+        onChanged: (_) => setState(() {}),
+        decoration: const InputDecoration(
+          labelText: 'Motif transmis au patient',
+          hintText: 'Ex. verso illisible ou carte expirée',
+          alignLabelWithHint: true,
+        ),
+      ),
+    ),
+    actions: [
+      TextButton(
+        onPressed: () => Navigator.pop(context),
+        child: const Text('Annuler'),
+      ),
+      FilledButton(
+        key: const ValueKey('confirm-admin-insurance-rejection'),
+        onPressed: _reason.text.trim().length < 5
+            ? null
+            : () => Navigator.pop(context, _reason.text.trim()),
+        child: const Text('Confirmer le refus'),
+      ),
+    ],
   );
 }
 
