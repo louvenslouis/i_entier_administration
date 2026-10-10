@@ -15,6 +15,12 @@ les inscriptions professionnelles de l’écosystème i-ENTIER.
 - vérification des campagnes de financement solidaire ;
 - rapprochement des contributions avec leur référence de paiement.
 
+## Données de référence
+
+Le répertoire national des établissements de santé est importé dans
+`ientier.health_facilities`. La préparation des données et les contrôles sont
+documentés dans [`database/README.md`](database/README.md).
+
 ## Autoriser le premier administrateur
 
 L’application ne peut pas s’auto-attribuer un rôle. Après la première connexion

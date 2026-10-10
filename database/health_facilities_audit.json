@@ -1,0 +1,5878 @@
+{
+  "source_file": "Statuts des établissements de santé de Gonaïves.xlsx",
+  "source_sha256": "f3b795f2b4675cee84c904946b2fe6e90b91648eb0ee6cdaa9a09e18627415bd",
+  "row_count": 1072,
+  "department_counts": {
+    "Artibonite": 134,
+    "Centre": 59,
+    "Grand-Anse": 65,
+    "Nippes": 40,
+    "Nord": 113,
+    "Nord-Est": 48,
+    "Nord-Ouest": 94,
+    "Ouest": 366,
+    "Sud": 86,
+    "Sud-Est": 67
+  },
+  "category_counts": {
+    "Autres hôpitaux": 73,
+    "Centre communautaire de santé": 394,
+    "Centre de santé": 540,
+    "Hôpital communautaire de référence": 45,
+    "Hôpital départemental": 10,
+    "Hôpital universitaire": 6,
+    "Non renseignée": 1,
+    "Point de prestation de services": 2,
+    "Point fixe": 1
+  },
+  "operation_counts": {
+    "Fonctionnelle": 557,
+    "Non fonctionnelle": 27,
+    "À vérifier": 488
+  },
+  "missing_code_count": 5,
+  "shared_codes": {
+    "811909": 2,
+    "934104": 2
+  },
+  "name_review_count": 298,
+  "name_reviews": [
+    {
+      "source_row": 13,
+      "source_code": "511302",
+      "source_name": "CCS Bayonnais",
+      "sigles_to_review": [
+        "CCS"
+      ]
+    },
+    {
+      "source_row": 21,
+      "source_code": "512306",
+      "source_name": "CCS Rouj",
+      "sigles_to_review": [
+        "CCS"
+      ]
+    },
+    {
+      "source_row": 28,
+      "source_code": "513204",
+      "source_name": "Centre de Santé Petite Desdunes SOSAKA",
+      "sigles_to_review": [
+        "SOSAKA"
+      ]
+    },
+    {
+      "source_row": 41,
+      "source_code": "521805",
+      "source_name": "SOS France",
+      "sigles_to_review": [
+        "SOS"
+      ]
+    },
+    {
+      "source_row": 43,
+      "source_code": "522201",
+      "source_name": "CDS de Terre-Neuve",
+      "sigles_to_review": [
+        "CDS"
+      ]
+    },
+    {
+      "source_row": 45,
+      "source_code": "523101",
+      "source_name": "CS d’Anse Rouge",
+      "sigles_to_review": [
+        "CS"
+      ]
+    },
+    {
+      "source_row": 46,
+      "source_code": "523105",
+      "source_name": "CCS Plaine de l'Arbre",
+      "sigles_to_review": [
+        "CCS"
+      ]
+    },
+    {
+      "source_row": 47,
+      "source_code": "523107",
+      "source_name": "CCS Tanté",
+      "sigles_to_review": [
+        "CCS"
+      ]
+    },
+    {
+      "source_row": 48,
+      "source_code": "523108",
+      "source_name": "CCS Atrel",
+      "sigles_to_review": [
+        "CCS"
+      ]
+    },
+    {
+      "source_row": 49,
+      "source_code": "523202",
+      "source_name": "CCS de Coridon",
+      "sigles_to_review": [
+        "CCS"
+      ]
+    },
+    {
+      "source_row": 50,
+      "source_code": "523203",
+      "source_name": "CCS Figuier",
+      "sigles_to_review": [
+        "CCS"
+      ]
+    },
+    {
+      "source_row": 51,
+      "source_code": "523206",
+      "source_name": "CCS Sources Chaudes",
+      "sigles_to_review": [
+        "CCS"
+      ]
+    },
+    {
+      "source_row": 54,
+      "source_code": "531108",
+      "source_name": "Hôpital DASH/Montrouis",
+      "sigles_to_review": [
+        "DASH"
+      ]
+    },
+    {
+      "source_row": 58,
+      "source_code": "531304",
+      "source_name": "CS de Goyavier",
+      "sigles_to_review": [
+        "CS"
+      ]
+    },
+    {
+      "source_row": 63,
+      "source_code": "531510",
+      "source_name": "Centre MédiCS de la RHEMA de Bocozele",
+      "sigles_to_review": [
+        "RHEMA"
+      ]
+    },
+    {
+      "source_row": 64,
+      "source_code": "531511",
+      "source_name": "CCS de Gervais",
+      "sigles_to_review": [
+        "CCS"
+      ]
+    },
+    {
+      "source_row": 69,
+      "source_code": "531615",
+      "source_name": "SSPE de Saint Marc",
+      "sigles_to_review": [
+        "SSPE"
+      ]
+    },
+    {
+      "source_row": 70,
+      "source_code": "531616",
+      "source_name": "FOSREF de Saint Marc",
+      "sigles_to_review": [
+        "FOSREF"
+      ]
+    },
+    {
+      "source_row": 72,
+      "source_code": "532108",
+      "source_name": "CCS de Liancourt",
+      "sigles_to_review": [
+        "CCS"
+      ]
+    },
+    {
+      "source_row": 74,
+      "source_code": "532205",
+      "source_name": "CCS Deschapelles",
+      "sigles_to_review": [
+        "CCS"
+      ]
+    },
+    {
+      "source_row": 75,
+      "source_code": "532211",
+      "source_name": "CS de Belanger",
+      "sigles_to_review": [
+        "CS"
+      ]
+    },
+    {
+      "source_row": 77,
+      "source_code": "532404",
+      "source_name": "CSL de Desarmes",
+      "sigles_to_review": [
+        "CSL"
+      ]
+    },
+    {
+      "source_row": 78,
+      "source_code": "532407",
+      "source_name": "CCS Gabriel",
+      "sigles_to_review": [
+        "CCS"
+      ]
+    },
+    {
+      "source_row": 86,
+      "source_code": "533201",
+      "source_name": "CS Bossous",
+      "sigles_to_review": [
+        "CS"
+      ]
+    },
+    {
+      "source_row": 87,
+      "source_code": "541108",
+      "source_name": "CCS de Sanoix",
+      "sigles_to_review": [
+        "CCS"
+      ]
+    },
+    {
+      "source_row": 88,
+      "source_code": "541113",
+      "source_name": "CS de Villard",
+      "sigles_to_review": [
+        "CS"
+      ]
+    },
+    {
+      "source_row": 91,
+      "source_code": "541214",
+      "source_name": "CCS de Hatte Chevreau",
+      "sigles_to_review": [
+        "CCS"
+      ]
+    },
+    {
+      "source_row": 92,
+      "source_code": "541217",
+      "source_name": "CS de Haute Feuille",
+      "sigles_to_review": [
+        "CS"
+      ]
+    },
+    {
+      "source_row": 99,
+      "source_code": "541319",
+      "source_name": "CS de Grand Bois",
+      "sigles_to_review": [
+        "CS"
+      ]
+    },
+    {
+      "source_row": 102,
+      "source_code": "541410",
+      "source_name": "CCS Grande Hatte",
+      "sigles_to_review": [
+        "CCS"
+      ]
+    },
+    {
+      "source_row": 103,
+      "source_code": "541420",
+      "source_name": "CS de Bois Mary",
+      "sigles_to_review": [
+        "CS"
+      ]
+    },
+    {
+      "source_row": 107,
+      "source_code": "541618",
+      "source_name": "CS de Basse Cabaille",
+      "sigles_to_review": [
+        "CS"
+      ]
+    },
+    {
+      "source_row": 120,
+      "source_code": "544201",
+      "source_name": "CS Saint Pierre de Desdunes",
+      "sigles_to_review": [
+        "CS"
+      ]
+    },
+    {
+      "source_row": 121,
+      "source_code": "544202",
+      "source_name": "CCS de Descahos",
+      "sigles_to_review": [
+        "CCS"
+      ]
+    },
+    {
+      "source_row": 122,
+      "source_code": "544203",
+      "source_name": "CCS aux Sources",
+      "sigles_to_review": [
+        "CCS"
+      ]
+    },
+    {
+      "source_row": 123,
+      "source_code": "551101",
+      "source_name": "CCS Platana",
+      "sigles_to_review": [
+        "CCS"
+      ]
+    },
+    {
+      "source_row": 124,
+      "source_code": "551207",
+      "source_name": "Centre de Santé Living Hope (CS Camathe)",
+      "sigles_to_review": [
+        "CS"
+      ]
+    },
+    {
+      "source_row": 125,
+      "source_code": "551301",
+      "source_name": "CCS de Saint Michel de l’Attalaye",
+      "sigles_to_review": [
+        "CCS"
+      ]
+    },
+    {
+      "source_row": 126,
+      "source_code": "551305",
+      "source_name": "CCS Bas-de-Sault",
+      "sigles_to_review": [
+        "CCS"
+      ]
+    },
+    {
+      "source_row": 127,
+      "source_code": "551402",
+      "source_name": "CCS Lalomas",
+      "sigles_to_review": [
+        "CCS"
+      ]
+    },
+    {
+      "source_row": 128,
+      "source_code": "551506",
+      "source_name": "CCS de l'Ermite",
+      "sigles_to_review": [
+        "CCS"
+      ]
+    },
+    {
+      "source_row": 129,
+      "source_code": "551604",
+      "source_name": "CCS de Lacedras (Garde Baptiste)",
+      "sigles_to_review": [
+        "CCS"
+      ]
+    },
+    {
+      "source_row": 130,
+      "source_code": "551703",
+      "source_name": "CCS de Marmont (Nan Paul)",
+      "sigles_to_review": [
+        "CCS"
+      ]
+    },
+    {
+      "source_row": 131,
+      "source_code": "551808",
+      "source_name": "CS Saint Michel de l'Attalaye",
+      "sigles_to_review": [
+        "CS"
+      ]
+    },
+    {
+      "source_row": 132,
+      "source_code": "551812",
+      "source_name": "CCS de Savane Diane",
+      "sigles_to_review": [
+        "CCS"
+      ]
+    },
+    {
+      "source_row": 133,
+      "source_code": "552101",
+      "source_name": "CSL Marmelade",
+      "sigles_to_review": [
+        "CSL"
+      ]
+    },
+    {
+      "source_row": 134,
+      "source_code": "552301",
+      "source_name": "CCS de Platon",
+      "sigles_to_review": [
+        "CCS"
+      ]
+    },
+    {
+      "source_row": 135,
+      "source_code": null,
+      "source_name": "CS Atrel",
+      "sigles_to_review": [
+        "CS"
+      ]
+    },
+    {
+      "source_row": 153,
+      "source_code": "611202",
+      "source_name": "Clinique Externe UNDH",
+      "sigles_to_review": [
+        "UNDH"
+      ]
+    },
+    {
+      "source_row": 165,
+      "source_code": "613305",
+      "source_name": "CS Baille-Tourrible",
+      "sigles_to_review": [
+        "CS"
+      ]
+    },
+    {
+      "source_row": 172,
+      "source_code": "611110",
+      "source_name": "CS Dos Palais",
+      "sigles_to_review": [
+        "CS"
+      ]
+    },
+    {
+      "source_row": 175,
+      "source_code": "641201",
+      "source_name": "CS de Cerca La Source",
+      "sigles_to_review": [
+        "CS"
+      ]
+    },
+    {
+      "source_row": 176,
+      "source_code": "641305",
+      "source_name": "CS de Tilory",
+      "sigles_to_review": [
+        "CS"
+      ]
+    },
+    {
+      "source_row": 180,
+      "source_code": "623302",
+      "source_name": "CS Saint Esprit (Saint Esprivèt)",
+      "sigles_to_review": [
+        "CS"
+      ]
+    },
+    {
+      "source_row": 182,
+      "source_code": "623201",
+      "source_name": "CS Saint Michel de Boucan Carré",
+      "sigles_to_review": [
+        "CS"
+      ]
+    },
+    {
+      "source_row": 187,
+      "source_code": "621410",
+      "source_name": "Centre de Santé ODECOM",
+      "sigles_to_review": [
+        "ODECOM"
+      ]
+    },
+    {
+      "source_row": 193,
+      "source_code": "622101",
+      "source_name": "CS de Saut d’Eau",
+      "sigles_to_review": [
+        "CS"
+      ]
+    },
+    {
+      "source_row": 194,
+      "source_code": "622302",
+      "source_name": "CCS de Coupe Mardi Gras",
+      "sigles_to_review": [
+        "CCS"
+      ]
+    },
+    {
+      "source_row": 196,
+      "source_code": "821106",
+      "source_name": "HCR de Saint Jean Baptiste",
+      "sigles_to_review": [
+        "HCR"
+      ]
+    },
+    {
+      "source_row": 198,
+      "source_code": "821402",
+      "source_name": "SSPE de Mandou",
+      "sigles_to_review": [
+        "SSPE"
+      ]
+    },
+    {
+      "source_row": 204,
+      "source_code": "823501",
+      "source_name": "Sant santé Espwa AFSC",
+      "sigles_to_review": [
+        "AFSC"
+      ]
+    },
+    {
+      "source_row": 210,
+      "source_code": "831103",
+      "source_name": "SSPE Saint Paul de Moulines",
+      "sigles_to_review": [
+        "SSPE"
+      ]
+    },
+    {
+      "source_row": 213,
+      "source_code": "834102",
+      "source_name": "SSPE des Basses",
+      "sigles_to_review": [
+        "SSPE"
+      ]
+    },
+    {
+      "source_row": 214,
+      "source_code": "834106",
+      "source_name": "CS de Bernard-Gousse",
+      "sigles_to_review": [
+        "CS"
+      ]
+    },
+    {
+      "source_row": 216,
+      "source_code": "834304",
+      "source_name": "SSPE Espwa de Pointe Sable",
+      "sigles_to_review": [
+        "SSPE"
+      ]
+    },
+    {
+      "source_row": 219,
+      "source_code": "834503",
+      "source_name": "SSPE de Duchity",
+      "sigles_to_review": [
+        "SSPE"
+      ]
+    },
+    {
+      "source_row": 225,
+      "source_code": "832204",
+      "source_name": "CCS Golbotine",
+      "sigles_to_review": [
+        "CCS"
+      ]
+    },
+    {
+      "source_row": 226,
+      "source_code": "832205",
+      "source_name": "CS Grand Vincent",
+      "sigles_to_review": [
+        "CS"
+      ]
+    },
+    {
+      "source_row": 228,
+      "source_code": "832404",
+      "source_name": "HHF de Roseaux",
+      "sigles_to_review": [
+        "HHF"
+      ]
+    },
+    {
+      "source_row": 229,
+      "source_code": "812102",
+      "source_name": "CS Léon Coicou d’Anse du Clerc",
+      "sigles_to_review": [
+        "CS"
+      ]
+    },
+    {
+      "source_row": 230,
+      "source_code": "812203",
+      "source_name": "SSPE Saint Joseph des Abricots",
+      "sigles_to_review": [
+        "SSPE"
+      ]
+    },
+    {
+      "source_row": 231,
+      "source_code": "812401",
+      "source_name": "CCS Saint Victor",
+      "sigles_to_review": [
+        "CCS"
+      ]
+    },
+    {
+      "source_row": 233,
+      "source_code": "8131002",
+      "source_name": "HHF de Bonbon",
+      "sigles_to_review": [
+        "HHF"
+      ]
+    },
+    {
+      "source_row": 234,
+      "source_code": "815101",
+      "source_name": "CS de Chambellan",
+      "sigles_to_review": [
+        "CS"
+      ]
+    },
+    {
+      "source_row": 235,
+      "source_code": "815202",
+      "source_name": "SSPE de Bourdon",
+      "sigles_to_review": [
+        "SSPE"
+      ]
+    },
+    {
+      "source_row": 237,
+      "source_code": "811101",
+      "source_name": "CS Saint Antoine de Padoue de Vieux Bourg",
+      "sigles_to_review": [
+        "CS"
+      ]
+    },
+    {
+      "source_row": 241,
+      "source_code": "811213",
+      "source_name": "CCS Sassier",
+      "sigles_to_review": [
+        "CCS"
+      ]
+    },
+    {
+      "source_row": 242,
+      "source_code": "811309",
+      "source_name": "CS Bon Pasteur de Prévile",
+      "sigles_to_review": [
+        "CS"
+      ]
+    },
+    {
+      "source_row": 244,
+      "source_code": "811404",
+      "source_name": "NDPS de Latibolière",
+      "sigles_to_review": [
+        "NDPS"
+      ]
+    },
+    {
+      "source_row": 245,
+      "source_code": "811707",
+      "source_name": "SSPE de Marfranc",
+      "sigles_to_review": [
+        "SSPE"
+      ]
+    },
+    {
+      "source_row": 246,
+      "source_code": "811710",
+      "source_name": "CS Immaculée Conception de Sainte Hélène",
+      "sigles_to_review": [
+        "CS"
+      ]
+    },
+    {
+      "source_row": 247,
+      "source_code": "811711",
+      "source_name": "CCS DECADE",
+      "sigles_to_review": [
+        "CCS",
+        "DECADE"
+      ]
+    },
+    {
+      "source_row": 248,
+      "source_code": "811712",
+      "source_name": "CCS Tibelon",
+      "sigles_to_review": [
+        "CCS"
+      ]
+    },
+    {
+      "source_row": 249,
+      "source_code": "811801",
+      "source_name": "Klinik Pèp Bondye HHF de Jérémie",
+      "sigles_to_review": [
+        "HHF"
+      ]
+    },
+    {
+      "source_row": 251,
+      "source_code": "811804",
+      "source_name": "CCS de Fonds-Rouge Dayère",
+      "sigles_to_review": [
+        "CCS"
+      ]
+    },
+    {
+      "source_row": 253,
+      "source_code": "811906",
+      "source_name": "SSPE de Mackandal",
+      "sigles_to_review": [
+        "SSPE"
+      ]
+    },
+    {
+      "source_row": 255,
+      "source_code": "811909",
+      "source_name": "CCS Martineau",
+      "sigles_to_review": [
+        "CCS"
+      ]
+    },
+    {
+      "source_row": 256,
+      "source_code": "8119010",
+      "source_name": "Clinique ESMI",
+      "sigles_to_review": [
+        "ESMI"
+      ]
+    },
+    {
+      "source_row": 258,
+      "source_code": "814103",
+      "source_name": "CCS Notre Dame de Lourdes de Moron",
+      "sigles_to_review": [
+        "CCS"
+      ]
+    },
+    {
+      "source_row": 260,
+      "source_code": "1021204",
+      "source_name": "SSPE Félix Mathieu",
+      "sigles_to_review": [
+        "SSPE"
+      ]
+    },
+    {
+      "source_row": 261,
+      "source_code": "1021302",
+      "source_name": "SSPE de Saint Yves",
+      "sigles_to_review": [
+        "SSPE"
+      ]
+    },
+    {
+      "source_row": 262,
+      "source_code": "1021303",
+      "source_name": "SSPE de Javel",
+      "sigles_to_review": [
+        "SSPE"
+      ]
+    },
+    {
+      "source_row": 264,
+      "source_code": "1025301",
+      "source_name": "SSPE d'Arnaud",
+      "sigles_to_review": [
+        "SSPE"
+      ]
+    },
+    {
+      "source_row": 265,
+      "source_code": "1022301",
+      "source_name": "HCR de L'Asile",
+      "sigles_to_review": [
+        "HCR"
+      ]
+    },
+    {
+      "source_row": 267,
+      "source_code": "1022204",
+      "source_name": "SSPE de Changieux",
+      "sigles_to_review": [
+        "SSPE"
+      ]
+    },
+    {
+      "source_row": 268,
+      "source_code": "1022205",
+      "source_name": "MEBSH Bonne Fin de Changeux",
+      "sigles_to_review": [
+        "MEBSH"
+      ]
+    },
+    {
+      "source_row": 269,
+      "source_code": "1022402",
+      "source_name": "SSPE de Morisseaux",
+      "sigles_to_review": [
+        "SSPE"
+      ]
+    },
+    {
+      "source_row": 270,
+      "source_code": "1023101",
+      "source_name": "CS de Petit Trou",
+      "sigles_to_review": [
+        "CS"
+      ]
+    },
+    {
+      "source_row": 271,
+      "source_code": "1024502",
+      "source_name": "SSPE de Gauthier Civil",
+      "sigles_to_review": [
+        "SSPE"
+      ]
+    },
+    {
+      "source_row": 274,
+      "source_code": "1024603",
+      "source_name": "CS de Plaisance",
+      "sigles_to_review": [
+        "CS"
+      ]
+    },
+    {
+      "source_row": 276,
+      "source_code": "1031401",
+      "source_name": "CS Baradères",
+      "sigles_to_review": [
+        "CS"
+      ]
+    },
+    {
+      "source_row": 278,
+      "source_code": "1032101",
+      "source_name": "SSPE de Grand Boucan",
+      "sigles_to_review": [
+        "SSPE"
+      ]
+    },
+    {
+      "source_row": 279,
+      "source_code": "1013103",
+      "source_name": "SSPE Sainte Catherine de Bouzi",
+      "sigles_to_review": [
+        "SSPE"
+      ]
+    },
+    {
+      "source_row": 280,
+      "source_code": "1013202",
+      "source_name": "CS de Béthel",
+      "sigles_to_review": [
+        "CS"
+      ]
+    },
+    {
+      "source_row": 281,
+      "source_code": "1013301",
+      "source_name": "SSPE Saint Joseph de Pemerle",
+      "sigles_to_review": [
+        "SSPE"
+      ]
+    },
+    {
+      "source_row": 284,
+      "source_code": "1011101",
+      "source_name": "SSPE de Beraca",
+      "sigles_to_review": [
+        "SSPE"
+      ]
+    },
+    {
+      "source_row": 285,
+      "source_code": "1011102",
+      "source_name": "SSPE de Chalon",
+      "sigles_to_review": [
+        "SSPE"
+      ]
+    },
+    {
+      "source_row": 286,
+      "source_code": "1011203",
+      "source_name": "SSPE de Lhomond",
+      "sigles_to_review": [
+        "SSPE"
+      ]
+    },
+    {
+      "source_row": 287,
+      "source_code": "1011204",
+      "source_name": "SSPE de Belle Rivière",
+      "sigles_to_review": [
+        "SSPE"
+      ]
+    },
+    {
+      "source_row": 288,
+      "source_code": "1011305",
+      "source_name": "SSPE de Labrousse",
+      "sigles_to_review": [
+        "SSPE"
+      ]
+    },
+    {
+      "source_row": 290,
+      "source_code": "1011406",
+      "source_name": "SSPE de Saint Michel du Sud",
+      "sigles_to_review": [
+        "SSPE"
+      ]
+    },
+    {
+      "source_row": 292,
+      "source_code": "1014102",
+      "source_name": "SSPE de Mussotte",
+      "sigles_to_review": [
+        "SSPE"
+      ]
+    },
+    {
+      "source_row": 293,
+      "source_code": "1014104",
+      "source_name": "SSPE de L'Étang Rey Monastère",
+      "sigles_to_review": [
+        "SSPE"
+      ]
+    },
+    {
+      "source_row": 294,
+      "source_code": "1014203",
+      "source_name": "SSPE de Jeannette",
+      "sigles_to_review": [
+        "SSPE"
+      ]
+    },
+    {
+      "source_row": 295,
+      "source_code": "1014601",
+      "source_name": "CS de Paillant",
+      "sigles_to_review": [
+        "CS"
+      ]
+    },
+    {
+      "source_row": 296,
+      "source_code": "1012103",
+      "source_name": "SSPE de Petite Rivière",
+      "sigles_to_review": [
+        "SSPE"
+      ]
+    },
+    {
+      "source_row": 298,
+      "source_code": "1012301",
+      "source_name": "CS de Madian",
+      "sigles_to_review": [
+        "CS"
+      ]
+    },
+    {
+      "source_row": 306,
+      "source_code": "321312",
+      "source_name": "Dispensaire C. de Duty (NF)",
+      "sigles_to_review": [
+        "NF"
+      ]
+    },
+    {
+      "source_row": 308,
+      "source_code": "323104",
+      "source_name": "CS Second Mile de Milot",
+      "sigles_to_review": [
+        "CS"
+      ]
+    },
+    {
+      "source_row": 312,
+      "source_code": "323306",
+      "source_name": "FONDHAPE-S (Fondation Haitienne pour le Dev. de l'Education Sanitaire",
+      "sigles_to_review": [
+        "FONDHAPE-S"
+      ]
+    },
+    {
+      "source_row": 321,
+      "source_code": "322208",
+      "source_name": "CSL Jehova Jireh",
+      "sigles_to_review": [
+        "CSL"
+      ]
+    },
+    {
+      "source_row": 324,
+      "source_code": "322211",
+      "source_name": "Centre Hospitalier IDADEE",
+      "sigles_to_review": [
+        "IDADEE"
+      ]
+    },
+    {
+      "source_row": 327,
+      "source_code": "322310",
+      "source_name": "CS Rose Merci Robillard",
+      "sigles_to_review": [
+        "CS"
+      ]
+    },
+    {
+      "source_row": 331,
+      "source_code": "352201",
+      "source_name": "CSL de Port Margot",
+      "sigles_to_review": [
+        "CSL"
+      ]
+    },
+    {
+      "source_row": 338,
+      "source_code": "311123",
+      "source_name": "Complexe MediCS Famille en Santé (COMEFASA)",
+      "sigles_to_review": [
+        "COMEFASA"
+      ]
+    },
+    {
+      "source_row": 341,
+      "source_code": "311201",
+      "source_name": "CDS La Fossette",
+      "sigles_to_review": [
+        "CDS"
+      ]
+    },
+    {
+      "source_row": 342,
+      "source_code": "311203",
+      "source_name": "Disp. ND Lourdes Carénage",
+      "sigles_to_review": [
+        "ND"
+      ]
+    },
+    {
+      "source_row": 345,
+      "source_code": "311207",
+      "source_name": "Disp. ND Ste Philomène",
+      "sigles_to_review": [
+        "ND"
+      ]
+    },
+    {
+      "source_row": 348,
+      "source_code": "311220",
+      "source_name": "FOSREF Lakay",
+      "sigles_to_review": [
+        "FOSREF"
+      ]
+    },
+    {
+      "source_row": 349,
+      "source_code": "311221",
+      "source_name": "DASH Hôpital Christ du Nord",
+      "sigles_to_review": [
+        "DASH"
+      ]
+    },
+    {
+      "source_row": 350,
+      "source_code": "311222",
+      "source_name": "OFATMA Cap Haitien",
+      "sigles_to_review": [
+        "OFATMA"
+      ]
+    },
+    {
+      "source_row": 355,
+      "source_code": "311227",
+      "source_name": "CENTRE DE SOINS INFIRMIERS ET DE NUTRITION(CSIN)",
+      "sigles_to_review": [
+        "CSIN"
+      ]
+    },
+    {
+      "source_row": 358,
+      "source_code": "311230",
+      "source_name": "HAITI'S ELITE MEDICS TEAM (HELMT)CARES",
+      "sigles_to_review": [
+        "HELMT"
+      ]
+    },
+    {
+      "source_row": 359,
+      "source_code": "311231",
+      "source_name": "CS BELIZE MEDICS CENTER",
+      "sigles_to_review": [
+        "CS"
+      ]
+    },
+    {
+      "source_row": 362,
+      "source_code": "311309",
+      "source_name": "Centre MédiCS d'Aide Divine (CEMAD)",
+      "sigles_to_review": [
+        "CEMAD"
+      ]
+    },
+    {
+      "source_row": 365,
+      "source_code": "313202",
+      "source_name": "CSL Porte Ouverte",
+      "sigles_to_review": [
+        "CSL"
+      ]
+    },
+    {
+      "source_row": 382,
+      "source_code": "331503",
+      "source_name": "clinique Méthodiste De la Tannerie (NF)",
+      "sigles_to_review": [
+        "NF"
+      ]
+    },
+    {
+      "source_row": 384,
+      "source_code": "331901",
+      "source_name": "CS Grande Rivière du Nord",
+      "sigles_to_review": [
+        "CS"
+      ]
+    },
+    {
+      "source_row": 386,
+      "source_code": "362202",
+      "source_name": "CS Materno Infantile Mont Carmel",
+      "sigles_to_review": [
+        "CS"
+      ]
+    },
+    {
+      "source_row": 400,
+      "source_code": "342102",
+      "source_name": "CS Brostage de Dondon",
+      "sigles_to_review": [
+        "CS"
+      ]
+    },
+    {
+      "source_row": 401,
+      "source_code": "342401",
+      "source_name": "CS de Dondon",
+      "sigles_to_review": [
+        "CS"
+      ]
+    },
+    {
+      "source_row": 403,
+      "source_code": "345101",
+      "source_name": "CSL La Victoire",
+      "sigles_to_review": [
+        "CSL"
+      ]
+    },
+    {
+      "source_row": 404,
+      "source_code": "345103",
+      "source_name": "Centre de Santé Fondyl SAA de Mayaya",
+      "sigles_to_review": [
+        "SAA"
+      ]
+    },
+    {
+      "source_row": 407,
+      "source_code": "343101",
+      "source_name": "CSL de Ranquitte",
+      "sigles_to_review": [
+        "CSL"
+      ]
+    },
+    {
+      "source_row": 409,
+      "source_code": "341101",
+      "source_name": "CS Bois Neuf de Saint-Raphaël",
+      "sigles_to_review": [
+        "CS"
+      ]
+    },
+    {
+      "source_row": 410,
+      "source_code": "341401",
+      "source_name": "CS de Saint-Raphaël",
+      "sigles_to_review": [
+        "CS"
+      ]
+    },
+    {
+      "source_row": 412,
+      "source_code": "341403",
+      "source_name": "CS Second Mile de Saint-Raphaël",
+      "sigles_to_review": [
+        "CS"
+      ]
+    },
+    {
+      "source_row": 413,
+      "source_code": "412301",
+      "source_name": "CCS de Ferrier",
+      "sigles_to_review": [
+        "CCS"
+      ]
+    },
+    {
+      "source_row": 416,
+      "source_code": "411101",
+      "source_name": "CCS de Derac",
+      "sigles_to_review": [
+        "CCS"
+      ]
+    },
+    {
+      "source_row": 419,
+      "source_code": "411302",
+      "source_name": "CCS Acul Samedi",
+      "sigles_to_review": [
+        "CCS"
+      ]
+    },
+    {
+      "source_row": 423,
+      "source_code": "423202",
+      "source_name": "Centre  Médico Social de Mont-Organisé (CMSMO)",
+      "sigles_to_review": [
+        "CMSMO"
+      ]
+    },
+    {
+      "source_row": 424,
+      "source_code": null,
+      "source_name": "CS de Bois Poux",
+      "sigles_to_review": [
+        "CS"
+      ]
+    },
+    {
+      "source_row": 425,
+      "source_code": "421101",
+      "source_name": "CS de Ouanaminthe",
+      "sigles_to_review": [
+        "CS"
+      ]
+    },
+    {
+      "source_row": 428,
+      "source_code": "421109",
+      "source_name": "Polyclinique CEDIMED",
+      "sigles_to_review": [
+        "CEDIMED"
+      ]
+    },
+    {
+      "source_row": 435,
+      "source_code": "434104",
+      "source_name": "CCS de Cahesse",
+      "sigles_to_review": [
+        "CCS"
+      ]
+    },
+    {
+      "source_row": 443,
+      "source_code": "432602",
+      "source_name": "CCS de Dupity",
+      "sigles_to_review": [
+        "CCS"
+      ]
+    },
+    {
+      "source_row": 444,
+      "source_code": "433103",
+      "source_name": "CCS de Phaeton",
+      "sigles_to_review": [
+        "CCS"
+      ]
+    },
+    {
+      "source_row": 445,
+      "source_code": "433101",
+      "source_name": "CCS de Terrier Rouge",
+      "sigles_to_review": [
+        "CCS"
+      ]
+    },
+    {
+      "source_row": 450,
+      "source_code": "431202",
+      "source_name": "Centre médico familial et communautaire (CEMEFCO)",
+      "sigles_to_review": [
+        "CEMEFCO"
+      ]
+    },
+    {
+      "source_row": 456,
+      "source_code": "443102",
+      "source_name": "CS de Mombin Crochu",
+      "sigles_to_review": [
+        "CS"
+      ]
+    },
+    {
+      "source_row": 462,
+      "source_code": "932201",
+      "source_name": "CCS Baie de Henne",
+      "sigles_to_review": [
+        "CCS"
+      ]
+    },
+    {
+      "source_row": 463,
+      "source_code": "932204",
+      "source_name": "CCS Dupré",
+      "sigles_to_review": [
+        "CCS"
+      ]
+    },
+    {
+      "source_row": 464,
+      "source_code": "932205",
+      "source_name": "CCS Citerne Rémy",
+      "sigles_to_review": [
+        "CCS"
+      ]
+    },
+    {
+      "source_row": 465,
+      "source_code": "932302",
+      "source_name": "JMC-La Source",
+      "sigles_to_review": [
+        "JMC"
+      ]
+    },
+    {
+      "source_row": 466,
+      "source_code": "932303",
+      "source_name": "CCS Petite Rivière de Baie de Henne",
+      "sigles_to_review": [
+        "CCS"
+      ]
+    },
+    {
+      "source_row": 467,
+      "source_code": "932406",
+      "source_name": "CS de Bassin Hardy",
+      "sigles_to_review": [
+        "CS"
+      ]
+    },
+    {
+      "source_row": 468,
+      "source_code": "933101",
+      "source_name": "Hôpital Évangelique de Bombardopolis (HEB)",
+      "sigles_to_review": [
+        "HEB"
+      ]
+    },
+    {
+      "source_row": 485,
+      "source_code": "934301",
+      "source_name": "Hôpital Notre Dame de la Paix (HNDP)",
+      "sigles_to_review": [
+        "HNDP"
+      ]
+    },
+    {
+      "source_row": 496,
+      "source_code": "931101",
+      "source_name": "CS Môle Saint Nicolas",
+      "sigles_to_review": [
+        "CS"
+      ]
+    },
+    {
+      "source_row": 499,
+      "source_code": "931202",
+      "source_name": "CS de Mare Rouge",
+      "sigles_to_review": [
+        "CS"
+      ]
+    },
+    {
+      "source_row": 505,
+      "source_code": "913101",
+      "source_name": "Hôpital Bon Samaritain de Bassin Bleu (HBSBB)",
+      "sigles_to_review": [
+        "HBSBB"
+      ]
+    },
+    {
+      "source_row": 509,
+      "source_code": "914102",
+      "source_name": "CS Notre Dame de Lourde",
+      "sigles_to_review": [
+        "CS"
+      ]
+    },
+    {
+      "source_row": 510,
+      "source_code": "914101",
+      "source_name": "CS de Chansolme",
+      "sigles_to_review": [
+        "CS"
+      ]
+    },
+    {
+      "source_row": 511,
+      "source_code": "911101",
+      "source_name": "Hôpital Notre Dame des Palmistes (HNDP)",
+      "sigles_to_review": [
+        "HNDP"
+      ]
+    },
+    {
+      "source_row": 517,
+      "source_code": "912206",
+      "source_name": "CS Harry Bordes",
+      "sigles_to_review": [
+        "CS"
+      ]
+    },
+    {
+      "source_row": 521,
+      "source_code": "911301",
+      "source_name": "CCS Trois Rivières",
+      "sigles_to_review": [
+        "CCS"
+      ]
+    },
+    {
+      "source_row": 522,
+      "source_code": "911309",
+      "source_name": "CCS Soleil",
+      "sigles_to_review": [
+        "CCS"
+      ]
+    },
+    {
+      "source_row": 528,
+      "source_code": "911320",
+      "source_name": "FOSREF Lakay",
+      "sigles_to_review": [
+        "FOSREF"
+      ]
+    },
+    {
+      "source_row": 529,
+      "source_code": "911324",
+      "source_name": "CCS Marie Consolatrice",
+      "sigles_to_review": [
+        "CCS"
+      ]
+    },
+    {
+      "source_row": 530,
+      "source_code": "911325",
+      "source_name": "Centre MédiCS de la Coopérative Haïtienne de Santé (COHASA)",
+      "sigles_to_review": [
+        "COHASA"
+      ]
+    },
+    {
+      "source_row": 539,
+      "source_code": "911601",
+      "source_name": "Hopital de l'OFATMA du Nord-Ouest",
+      "sigles_to_review": [
+        "OFATMA"
+      ]
+    },
+    {
+      "source_row": 546,
+      "source_code": "921202",
+      "source_name": "Hopital Communautaire Autrichien Haitien (HCAH)",
+      "sigles_to_review": [
+        "HCAH"
+      ]
+    },
+    {
+      "source_row": 553,
+      "source_code": "921502",
+      "source_name": "CS Saint Joseph",
+      "sigles_to_review": [
+        "CS"
+      ]
+    },
+    {
+      "source_row": 554,
+      "source_code": "921501",
+      "source_name": "CS de Bonneau",
+      "sigles_to_review": [
+        "CS"
+      ]
+    },
+    {
+      "source_row": 555,
+      "source_code": "141201",
+      "source_name": "Centre de Santé sans lit SADA Matheux",
+      "sigles_to_review": [
+        "SADA"
+      ]
+    },
+    {
+      "source_row": 561,
+      "source_code": "141612",
+      "source_name": "CSL de Saintard",
+      "sigles_to_review": [
+        "CSL"
+      ]
+    },
+    {
+      "source_row": 562,
+      "source_code": "141811",
+      "source_name": "SADA-AME/Délices",
+      "sigles_to_review": [
+        "SADA",
+        "AME"
+      ]
+    },
+    {
+      "source_row": 563,
+      "source_code": "141703",
+      "source_name": "SADA Fonds Baptiste",
+      "sigles_to_review": [
+        "SADA"
+      ]
+    },
+    {
+      "source_row": 567,
+      "source_code": "141812",
+      "source_name": "Promoteurs Objectif Zéro Sida (POZ)",
+      "sigles_to_review": [
+        "POZ"
+      ]
+    },
+    {
+      "source_row": 568,
+      "source_code": "141813",
+      "source_name": "Clinique Life Collection Mission (LCM)",
+      "sigles_to_review": [
+        "LCM"
+      ]
+    },
+    {
+      "source_row": 571,
+      "source_code": "142905",
+      "source_name": "CSL de Cabaret",
+      "sigles_to_review": [
+        "CSL"
+      ]
+    },
+    {
+      "source_row": 572,
+      "source_code": "142907",
+      "source_name": "CSL de Bélanger (SADA)",
+      "sigles_to_review": [
+        "CSL",
+        "SADA"
+      ]
+    },
+    {
+      "source_row": 575,
+      "source_code": "142102",
+      "source_name": "CS St Antoine de Titanyen",
+      "sigles_to_review": [
+        "CS"
+      ]
+    },
+    {
+      "source_row": 576,
+      "source_code": "142104",
+      "source_name": "CS St Gérard",
+      "sigles_to_review": [
+        "CS"
+      ]
+    },
+    {
+      "source_row": 577,
+      "source_code": "142411",
+      "source_name": "CSL de source matelas (SADA)",
+      "sigles_to_review": [
+        "CSL",
+        "SADA"
+      ]
+    },
+    {
+      "source_row": 597,
+      "source_code": "131230",
+      "source_name": "COSECO",
+      "sigles_to_review": [
+        "COSECO"
+      ]
+    },
+    {
+      "source_row": 602,
+      "source_code": "131241",
+      "source_name": "HCR de Bon Repos",
+      "sigles_to_review": [
+        "HCR"
+      ]
+    },
+    {
+      "source_row": 613,
+      "source_code": "131115",
+      "source_name": "Clinique PROFAMIL",
+      "sigles_to_review": [
+        "PROFAMIL"
+      ]
+    },
+    {
+      "source_row": 625,
+      "source_code": "135401",
+      "source_name": "CS de Fonds Verrettes",
+      "sigles_to_review": [
+        "CS"
+      ]
+    },
+    {
+      "source_row": 638,
+      "source_code": "132101",
+      "source_name": "CS de Thomazeau",
+      "sigles_to_review": [
+        "CS"
+      ]
+    },
+    {
+      "source_row": 669,
+      "source_code": "1211503",
+      "source_name": "CS Farnèse Louis Charles de Palmiste à Vin",
+      "sigles_to_review": [
+        "CS"
+      ]
+    },
+    {
+      "source_row": 674,
+      "source_code": "121117",
+      "source_name": "CENTRE de Santé MACAYA-LIB",
+      "sigles_to_review": [
+        "LIB"
+      ]
+    },
+    {
+      "source_row": 678,
+      "source_code": "121214",
+      "source_name": "Centre de santé Petite Rivière (NF)",
+      "sigles_to_review": [
+        "NF"
+      ]
+    },
+    {
+      "source_row": 691,
+      "source_code": "1221201",
+      "source_name": "Dispensaire APV de Vallue (NF)",
+      "sigles_to_review": [
+        "APV",
+        "NF"
+      ]
+    },
+    {
+      "source_row": 697,
+      "source_code": "122905",
+      "source_name": "CS Les Palmes (Besace)",
+      "sigles_to_review": [
+        "CS"
+      ]
+    },
+    {
+      "source_row": 698,
+      "source_code": "1131001",
+      "source_name": "CS FONDEFH Bizoton 61",
+      "sigles_to_review": [
+        "CS",
+        "FONDEFH"
+      ]
+    },
+    {
+      "source_row": 702,
+      "source_code": "1131006",
+      "source_name": "Hôpital Adventiste d'Haïti (HAH)",
+      "sigles_to_review": [
+        "HAH"
+      ]
+    },
+    {
+      "source_row": 703,
+      "source_code": "1131007",
+      "source_name": "CS OMES",
+      "sigles_to_review": [
+        "CS",
+        "OMES"
+      ]
+    },
+    {
+      "source_row": 704,
+      "source_code": "1131009",
+      "source_name": "CSL OBCG",
+      "sigles_to_review": [
+        "CSL",
+        "OBCG"
+      ]
+    },
+    {
+      "source_row": 706,
+      "source_code": "1131015",
+      "source_name": "Dispensaire ASCOSADEC",
+      "sigles_to_review": [
+        "ASCOSADEC"
+      ]
+    },
+    {
+      "source_row": 707,
+      "source_code": "1131018",
+      "source_name": "CS Mère Térésa",
+      "sigles_to_review": [
+        "CS"
+      ]
+    },
+    {
+      "source_row": 708,
+      "source_code": "1131020",
+      "source_name": "CS communauté Frères Unis (NF)",
+      "sigles_to_review": [
+        "CS",
+        "NF"
+      ]
+    },
+    {
+      "source_row": 709,
+      "source_code": "1131031",
+      "source_name": "ASAD",
+      "sigles_to_review": [
+        "ASAD"
+      ]
+    },
+    {
+      "source_row": 729,
+      "source_code": "1131747",
+      "source_name": "Centre FOSREF Lakay",
+      "sigles_to_review": [
+        "FOSREF"
+      ]
+    },
+    {
+      "source_row": 736,
+      "source_code": "117129",
+      "source_name": "Centre Hospitalier Sainte-Catherine Laboure (CHOSCAL)",
+      "sigles_to_review": [
+        "CHOSCAL"
+      ]
+    },
+    {
+      "source_row": 737,
+      "source_code": "117130",
+      "source_name": "CHAPI",
+      "sigles_to_review": [
+        "CHAPI"
+      ]
+    },
+    {
+      "source_row": 739,
+      "source_code": "117135",
+      "source_name": "MSF France Drouillard",
+      "sigles_to_review": [
+        "MSF"
+      ]
+    },
+    {
+      "source_row": 745,
+      "source_code": "117260",
+      "source_name": "Centre MediCS Partners In development (CEMEPID)",
+      "sigles_to_review": [
+        "CEMEPID"
+      ]
+    },
+    {
+      "source_row": 757,
+      "source_code": "112111",
+      "source_name": "Hôpital DASH Delmas 48",
+      "sigles_to_review": [
+        "DASH"
+      ]
+    },
+    {
+      "source_row": 758,
+      "source_code": "112112",
+      "source_name": "Hôpital Jude Anne (DASH)",
+      "sigles_to_review": [
+        "DASH"
+      ]
+    },
+    {
+      "source_row": 759,
+      "source_code": "112114",
+      "source_name": "Centre de Santé CPFO",
+      "sigles_to_review": [
+        "CPFO"
+      ]
+    },
+    {
+      "source_row": 762,
+      "source_code": "112123",
+      "source_name": "Hôpital de l'OFATMA",
+      "sigles_to_review": [
+        "OFATMA"
+      ]
+    },
+    {
+      "source_row": 773,
+      "source_code": "112147",
+      "source_name": "FOSREF",
+      "sigles_to_review": [
+        "FOSREF"
+      ]
+    },
+    {
+      "source_row": 776,
+      "source_code": "112154",
+      "source_name": "MSF Hollande",
+      "sigles_to_review": [
+        "MSF"
+      ]
+    },
+    {
+      "source_row": 777,
+      "source_code": "112155",
+      "source_name": "FOSREF Christ Roi",
+      "sigles_to_review": [
+        "FOSREF"
+      ]
+    },
+    {
+      "source_row": 792,
+      "source_code": "116103",
+      "source_name": "Centre de Santé Bon Berger FOSADEC",
+      "sigles_to_review": [
+        "FOSADEC"
+      ]
+    },
+    {
+      "source_row": 794,
+      "source_code": "116112",
+      "source_name": "Centre de Santé FACEDHA",
+      "sigles_to_review": [
+        "FACEDHA"
+      ]
+    },
+    {
+      "source_row": 797,
+      "source_code": "116115",
+      "source_name": "Centre de Santé Communautaire FHED",
+      "sigles_to_review": [
+        "FHED"
+      ]
+    },
+    {
+      "source_row": 820,
+      "source_code": "114128",
+      "source_name": "Hôpital St Landry (DASH)",
+      "sigles_to_review": [
+        "DASH"
+      ]
+    },
+    {
+      "source_row": 821,
+      "source_code": "114134",
+      "source_name": "Hopital Sainte Claire - DASH Laboule 11",
+      "sigles_to_review": [
+        "DASH"
+      ]
+    },
+    {
+      "source_row": 822,
+      "source_code": "114135",
+      "source_name": "Centre de Santé OPORHA de Bois Moquette",
+      "sigles_to_review": [
+        "OPORHA"
+      ]
+    },
+    {
+      "source_row": 823,
+      "source_code": "114216",
+      "source_name": "CS retraite sainte Anne",
+      "sigles_to_review": [
+        "CS"
+      ]
+    },
+    {
+      "source_row": 826,
+      "source_code": "114309",
+      "source_name": "CS Canapé Vert",
+      "sigles_to_review": [
+        "CS"
+      ]
+    },
+    {
+      "source_row": 829,
+      "source_code": "114601",
+      "source_name": "CS Morne Hercule",
+      "sigles_to_review": [
+        "CS"
+      ]
+    },
+    {
+      "source_row": 830,
+      "source_code": "114602",
+      "source_name": "CS Morne Lazarre",
+      "sigles_to_review": [
+        "CS"
+      ]
+    },
+    {
+      "source_row": 832,
+      "source_code": "114715",
+      "source_name": "CS de Pernier",
+      "sigles_to_review": [
+        "CS"
+      ]
+    },
+    {
+      "source_row": 833,
+      "source_code": "114722",
+      "source_name": "CS philantropique de Dupont",
+      "sigles_to_review": [
+        "CS"
+      ]
+    },
+    {
+      "source_row": 839,
+      "source_code": "111600",
+      "source_name": "Hôpital de l'Université d'État d'Haïti (HUEH)",
+      "sigles_to_review": [
+        "HUEH"
+      ]
+    },
+    {
+      "source_row": 850,
+      "source_code": "111619",
+      "source_name": "CSL SODEC",
+      "sigles_to_review": [
+        "CSL",
+        "SODEC"
+      ]
+    },
+    {
+      "source_row": 851,
+      "source_code": "111620",
+      "source_name": "PROFAMIL 2",
+      "sigles_to_review": [
+        "PROFAMIL"
+      ]
+    },
+    {
+      "source_row": 857,
+      "source_code": "111628",
+      "source_name": "Association pour la Promotion de la Santé Intégrale de la Famille (APROSIFA)",
+      "sigles_to_review": [
+        "APROSIFA"
+      ]
+    },
+    {
+      "source_row": 860,
+      "source_code": "111634",
+      "source_name": "Les Centres GHESKIO",
+      "sigles_to_review": [
+        "GHESKIO"
+      ]
+    },
+    {
+      "source_row": 865,
+      "source_code": "111643",
+      "source_name": "Centre Materno-ChirugiCS de l'UMO",
+      "sigles_to_review": [
+        "UMO"
+      ]
+    },
+    {
+      "source_row": 866,
+      "source_code": "111645",
+      "source_name": "FOSREF Lalue",
+      "sigles_to_review": [
+        "FOSREF"
+      ]
+    },
+    {
+      "source_row": 868,
+      "source_code": "111647",
+      "source_name": "CS Cité Canada (Haut Turgeau)",
+      "sigles_to_review": [
+        "CS"
+      ]
+    },
+    {
+      "source_row": 869,
+      "source_code": "111650",
+      "source_name": "CEMEAH",
+      "sigles_to_review": [
+        "CEMEAH"
+      ]
+    },
+    {
+      "source_row": 870,
+      "source_code": "111655",
+      "source_name": "Institut FAME PEREO",
+      "sigles_to_review": [
+        "FAME",
+        "PEREO"
+      ]
+    },
+    {
+      "source_row": 883,
+      "source_code": "111685",
+      "source_name": "Fondation pour le Développement et l'Encadrement de la Famille Haïtienne (FONDEFH)",
+      "sigles_to_review": [
+        "FONDEFH"
+      ]
+    },
+    {
+      "source_row": 885,
+      "source_code": "111687",
+      "source_name": "Centre de Soins La Providence (CDSP)",
+      "sigles_to_review": [
+        "CDSP"
+      ]
+    },
+    {
+      "source_row": 893,
+      "source_code": "111851",
+      "source_name": "CS de St Jude",
+      "sigles_to_review": [
+        "CS"
+      ]
+    },
+    {
+      "source_row": 894,
+      "source_code": "111852",
+      "source_name": "CS Communautaire Cité de l'Éternel",
+      "sigles_to_review": [
+        "CS"
+      ]
+    },
+    {
+      "source_row": 895,
+      "source_code": "111869",
+      "source_name": "Hôpital Saint James (DASH Martissant 4)",
+      "sigles_to_review": [
+        "DASH"
+      ]
+    },
+    {
+      "source_row": 900,
+      "source_code": "111879",
+      "source_name": "Clinique Communautaire de Martissant (FONDEFH)",
+      "sigles_to_review": [
+        "FONDEFH"
+      ]
+    },
+    {
+      "source_row": 904,
+      "source_code": "118350",
+      "source_name": "Office MédiCS de Clercine (OMEC)",
+      "sigles_to_review": [
+        "OMEC"
+      ]
+    },
+    {
+      "source_row": 909,
+      "source_code": "118355",
+      "source_name": "Centre D'Education Sanitaire Et MediCS (CESMED)",
+      "sigles_to_review": [
+        "CESMED"
+      ]
+    },
+    {
+      "source_row": 910,
+      "source_code": "118440",
+      "source_name": "GHESKIO/ Imis",
+      "sigles_to_review": [
+        "GHESKIO"
+      ]
+    },
+    {
+      "source_row": 913,
+      "source_code": "118444",
+      "source_name": "Hôpital DASH Tabarre",
+      "sigles_to_review": [
+        "DASH"
+      ]
+    },
+    {
+      "source_row": 915,
+      "source_code": "118446",
+      "source_name": "MSF Belgique",
+      "sigles_to_review": [
+        "MSF"
+      ]
+    },
+    {
+      "source_row": 923,
+      "source_code": "731312",
+      "source_name": "HCR d'Aquin (CDI)",
+      "sigles_to_review": [
+        "HCR"
+      ]
+    },
+    {
+      "source_row": 926,
+      "source_code": "731602",
+      "source_name": "CS Sunlight La Colline",
+      "sigles_to_review": [
+        "CS"
+      ]
+    },
+    {
+      "source_row": 930,
+      "source_code": "733102",
+      "source_name": "CS Cavaillon",
+      "sigles_to_review": [
+        "CS"
+      ]
+    },
+    {
+      "source_row": 934,
+      "source_code": "733211",
+      "source_name": "CS Notre Dame du Bon Secours de Cavaillon",
+      "sigles_to_review": [
+        "CS"
+      ]
+    },
+    {
+      "source_row": 936,
+      "source_code": "733312",
+      "source_name": "PPS La Biche",
+      "sigles_to_review": [
+        "PPS"
+      ]
+    },
+    {
+      "source_row": 938,
+      "source_code": "733415",
+      "source_name": "Centre Santé Communautaire MEBSH PPS Bonne Fin",
+      "sigles_to_review": [
+        "MEBSH",
+        "PPS"
+      ]
+    },
+    {
+      "source_row": 939,
+      "source_code": "733501",
+      "source_name": "PPS Changeux",
+      "sigles_to_review": [
+        "PPS"
+      ]
+    },
+    {
+      "source_row": 940,
+      "source_code": "733502",
+      "source_name": "PPS Plaisance",
+      "sigles_to_review": [
+        "PPS"
+      ]
+    },
+    {
+      "source_row": 941,
+      "source_code": "733508",
+      "source_name": "PPS Santé Communautaire Marc Lacet",
+      "sigles_to_review": [
+        "PPS"
+      ]
+    },
+    {
+      "source_row": 961,
+      "source_code": "714203",
+      "source_name": "CCS de Lougou",
+      "sigles_to_review": [
+        "CCS"
+      ]
+    },
+    {
+      "source_row": 963,
+      "source_code": "714306",
+      "source_name": "CCS de Dominique",
+      "sigles_to_review": [
+        "CCS"
+      ]
+    },
+    {
+      "source_row": 964,
+      "source_code": "713101",
+      "source_name": "Dispensaire de la Mission Immaculée Conception (MIC) de Chantal",
+      "sigles_to_review": [
+        "MIC"
+      ]
+    },
+    {
+      "source_row": 967,
+      "source_code": "716102",
+      "source_name": "Fondation for Hope and Health In Haiti (FHHH)",
+      "sigles_to_review": [
+        "FHHH"
+      ]
+    },
+    {
+      "source_row": 969,
+      "source_code": "711101",
+      "source_name": "IBS-Institut Brenda Strafford",
+      "sigles_to_review": [
+        "IBS"
+      ]
+    },
+    {
+      "source_row": 974,
+      "source_code": "711108",
+      "source_name": "OFATMA",
+      "sigles_to_review": [
+        "OFATMA"
+      ]
+    },
+    {
+      "source_row": 976,
+      "source_code": "711115",
+      "source_name": "FOSREF des Cayes",
+      "sigles_to_review": [
+        "FOSREF"
+      ]
+    },
+    {
+      "source_row": 977,
+      "source_code": "711116",
+      "source_name": "Kay Timoun Bondye (CD)",
+      "sigles_to_review": [
+        "CD"
+      ]
+    },
+    {
+      "source_row": 978,
+      "source_code": "711212",
+      "source_name": "Centre de Santé FONFRED",
+      "sigles_to_review": [
+        "FONFRED"
+      ]
+    },
+    {
+      "source_row": 979,
+      "source_code": "711218",
+      "source_name": "KLINIK FONFRED",
+      "sigles_to_review": [
+        "FONFRED"
+      ]
+    },
+    {
+      "source_row": 985,
+      "source_code": "711720",
+      "source_name": "Hôpital NOTRE DAME SA",
+      "sigles_to_review": [
+        "SA"
+      ]
+    },
+    {
+      "source_row": 1000,
+      "source_code": "721104",
+      "source_name": "HCR de Port Salut",
+      "sigles_to_review": [
+        "HCR"
+      ]
+    },
+    {
+      "source_row": 1011,
+      "source_code": "221501",
+      "source_name": "CS de Bainet",
+      "sigles_to_review": [
+        "CS"
+      ]
+    },
+    {
+      "source_row": 1017,
+      "source_code": "221904",
+      "source_name": "CCS de Chaumeil",
+      "sigles_to_review": [
+        "CCS"
+      ]
+    },
+    {
+      "source_row": 1022,
+      "source_code": "222602",
+      "source_name": "CS Saint Joseph de Cotes-de-Fer",
+      "sigles_to_review": [
+        "CS"
+      ]
+    },
+    {
+      "source_row": 1024,
+      "source_code": "222605",
+      "source_name": "CS Foi et Vie",
+      "sigles_to_review": [
+        "CS"
+      ]
+    },
+    {
+      "source_row": 1027,
+      "source_code": "234205",
+      "source_name": "CCS Jericho de Mare Rouge",
+      "sigles_to_review": [
+        "CCS"
+      ]
+    },
+    {
+      "source_row": 1031,
+      "source_code": "231404",
+      "source_name": "CS Corail Lamothe",
+      "sigles_to_review": [
+        "CS"
+      ]
+    },
+    {
+      "source_row": 1032,
+      "source_code": "231501",
+      "source_name": "CSL de Belle Anse",
+      "sigles_to_review": [
+        "CSL"
+      ]
+    },
+    {
+      "source_row": 1034,
+      "source_code": "232101",
+      "source_name": "CS de Grand Gosier",
+      "sigles_to_review": [
+        "CS"
+      ]
+    },
+    {
+      "source_row": 1041,
+      "source_code": "233305",
+      "source_name": "CS Sacré- Coeur",
+      "sigles_to_review": [
+        "CS"
+      ]
+    },
+    {
+      "source_row": 1043,
+      "source_code": "233101",
+      "source_name": "HCR de Cayes Jacmel",
+      "sigles_to_review": [
+        "HCR"
+      ]
+    },
+    {
+      "source_row": 1052,
+      "source_code": "211101",
+      "source_name": "CSL des Orangers",
+      "sigles_to_review": [
+        "CSL"
+      ]
+    },
+    {
+      "source_row": 1055,
+      "source_code": "211108",
+      "source_name": "CCS d'Arreguy",
+      "sigles_to_review": [
+        "CCS"
+      ]
+    },
+    {
+      "source_row": 1056,
+      "source_code": "211110",
+      "source_name": "CSL Lafond",
+      "sigles_to_review": [
+        "CSL"
+      ]
+    },
+    {
+      "source_row": 1058,
+      "source_code": "211113",
+      "source_name": "CS La vie en abondance de Beaudouin",
+      "sigles_to_review": [
+        "CS"
+      ]
+    },
+    {
+      "source_row": 1062,
+      "source_code": "211305",
+      "source_name": "CSL Marbial",
+      "sigles_to_review": [
+        "CSL"
+      ]
+    },
+    {
+      "source_row": 1068,
+      "source_code": "2141104",
+      "source_name": "Sant Sante Félisane MUSAC (SSFM)",
+      "sigles_to_review": [
+        "MUSAC",
+        "SSFM"
+      ]
+    },
+    {
+      "source_row": 1070,
+      "source_code": "212101",
+      "source_name": "CS de Marigot",
+      "sigles_to_review": [
+        "CS"
+      ]
+    },
+    {
+      "source_row": 1071,
+      "source_code": "212403",
+      "source_name": "CS Séguin",
+      "sigles_to_review": [
+        "CS"
+      ]
+    },
+    {
+      "source_row": 1073,
+      "source_code": "212503",
+      "source_name": "CS de Pérédo",
+      "sigles_to_review": [
+        "CS"
+      ]
+    }
+  ],
+  "record_review_count": 489,
+  "anomalies": [
+    {
+      "source_row": 135,
+      "name": "CS Atrel",
+      "issues": [
+        "code manquant",
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 138,
+      "name": "Centre Santé Fanm",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 188,
+      "name": "Clinique Pharma Centre de Santé de Trianon",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 195,
+      "name": "Dispensaire de Sainte Hélène",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 196,
+      "name": "HCR de Saint Jean Baptiste",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 197,
+      "name": "Dispensaire Icéus Picard de Sicard",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 198,
+      "name": "SSPE de Mandou",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 199,
+      "name": "Dispensaire Sainte Anne de Bariadelle",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 200,
+      "name": "Dispensaire Notre Dame de la Mercie de Petite Rivière",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 201,
+      "name": "Hôpital de la Communauté de Dame-Marie",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 202,
+      "name": "Centre de Santé Notre Dame des Malades",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 203,
+      "name": "Centre de Santé Saint Michel de Désormeaux",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 204,
+      "name": "Sant santé Espwa AFSC",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 205,
+      "name": "Dispensaire St Joseph de Carecasse",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 206,
+      "name": "Centre de Santé Sainte Agnès de Beaumont (CityMed)",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 207,
+      "name": "Dispensaire Communautaire La Providence",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 208,
+      "name": "Hopital Saint Pierre de Corail",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 209,
+      "name": "Dispensaire St Gérard",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 210,
+      "name": "SSPE Saint Paul de Moulines",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 211,
+      "name": "Dispensaire Sainte Claire de Corail",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 212,
+      "name": "Centre de Santé de Pestel",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 213,
+      "name": "SSPE des Basses",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 214,
+      "name": "CS de Bernard-Gousse",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 215,
+      "name": "Dispensaire Communautaire des Abricot",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 216,
+      "name": "SSPE Espwa de Pointe Sable",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 217,
+      "name": "Dispensaire Jean Bellune",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 218,
+      "name": "Dispensaire de Détail",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 219,
+      "name": "SSPE de Duchity",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 220,
+      "name": "Centre de Santé de Tozia",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 221,
+      "name": "Centre de Santé Bon Samaritain Duchity",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 222,
+      "name": "Centre de Santé de Carrefour Charles",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 223,
+      "name": "Dispensaire Saint Martin de Tours",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 224,
+      "name": "Centre de Santé St Antoine de Padoue de Lopino",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 225,
+      "name": "CCS Golbotine",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 226,
+      "name": "CS Grand Vincent",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 227,
+      "name": "Dispensaire Bon Samaritain des Roseaux",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 228,
+      "name": "HHF de Roseaux",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 229,
+      "name": "CS Léon Coicou d’Anse du Clerc",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 230,
+      "name": "SSPE Saint Joseph des Abricots",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 231,
+      "name": "CCS Saint Victor",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 232,
+      "name": "Dispensaire Chemen Lavi de Bonbon",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 233,
+      "name": "HHF de Bonbon",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 234,
+      "name": "CS de Chambellan",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 235,
+      "name": "SSPE de Bourdon",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 236,
+      "name": "Dispensaire de Boucan",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 237,
+      "name": "CS Saint Antoine de Padoue de Vieux Bourg",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 238,
+      "name": "Dispensaire Siloé de Léon",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 239,
+      "name": "Dispensaire Sainte Anne de Jérémie",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 240,
+      "name": "Centre de Santé Gatineau",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 241,
+      "name": "CCS Sassier",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 242,
+      "name": "CS Bon Pasteur de Prévile",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 243,
+      "name": "Centre Médico-Social de Gébeau",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 244,
+      "name": "NDPS de Latibolière",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 245,
+      "name": "SSPE de Marfranc",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 246,
+      "name": "CS Immaculée Conception de Sainte Hélène",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 247,
+      "name": "CCS DECADE",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 248,
+      "name": "CCS Tibelon",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 249,
+      "name": "Klinik Pèp Bondye HHF de Jérémie",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 250,
+      "name": "Dispensaire Sainte Thérèse de l'Enfant Jésus",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 251,
+      "name": "CCS de Fonds-Rouge Dayère",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 252,
+      "name": "Hôpital Saint Antoine de Jérémie",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 253,
+      "name": "SSPE de Mackandal",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 254,
+      "name": "Dispensaire Notre Dame de l’Assomption",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 255,
+      "name": "CCS Martineau",
+      "issues": [
+        "code partagé",
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 256,
+      "name": "Clinique ESMI",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 257,
+      "name": "Centre de Santé de Moron",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 258,
+      "name": "CCS Notre Dame de Lourdes de Moron",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 259,
+      "name": "Mennonite de Moron",
+      "issues": [
+        "code partagé",
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 260,
+      "name": "SSPE Félix Mathieu",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 261,
+      "name": "SSPE de Saint Yves",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 262,
+      "name": "SSPE de Javel",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 263,
+      "name": "Hopital  Jules Fleury",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 264,
+      "name": "SSPE d'Arnaud",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 265,
+      "name": "HCR de L'Asile",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 266,
+      "name": "New Hope Centre de Santé Ministrie Internationale",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 267,
+      "name": "SSPE de Changieux",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 268,
+      "name": "MEBSH Bonne Fin de Changeux",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 269,
+      "name": "SSPE de Morisseaux",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 270,
+      "name": "CS de Petit Trou",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 271,
+      "name": "SSPE de Gauthier Civil",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 272,
+      "name": "Centre de Santé Léopold Luc Guillaume",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 273,
+      "name": "Centre Médico Social de Dagout",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 274,
+      "name": "CS de Plaisance",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 275,
+      "name": "Dispensaire Sainte Élisabeth de Fonds-Tortue",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 276,
+      "name": "CS Baradères",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 277,
+      "name": "Centre MédiCS de Dubois",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 278,
+      "name": "SSPE de Grand Boucan",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 279,
+      "name": "SSPE Sainte Catherine de Bouzi",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 280,
+      "name": "CS de Béthel",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 281,
+      "name": "SSPE Saint Joseph de Pemerle",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 282,
+      "name": "Clinique Helping Hands",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 283,
+      "name": "Élite MédiCSe Center",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 284,
+      "name": "SSPE de Beraca",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 285,
+      "name": "SSPE de Chalon",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 286,
+      "name": "SSPE de Lhomond",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 287,
+      "name": "SSPE de Belle Rivière",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 288,
+      "name": "SSPE de Labrousse",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 289,
+      "name": "Centre MédiCS Sainte Mère Théresa",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 290,
+      "name": "SSPE de Saint Michel du Sud",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 291,
+      "name": "Hôpital Sainte Thérèse de Miragoâne",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 292,
+      "name": "SSPE de Mussotte",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 293,
+      "name": "SSPE de L'Étang Rey Monastère",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 294,
+      "name": "SSPE de Jeannette",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 295,
+      "name": "CS de Paillant",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 296,
+      "name": "SSPE de Petite Rivière",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 297,
+      "name": "Dispensaire de Cholette",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 298,
+      "name": "CS de Madian",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 299,
+      "name": "Clinic de la Visitation",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 312,
+      "name": "FONDHAPE-S (Fondation Haitienne pour le Dev. de l'Education Sanitaire",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 313,
+      "name": "Centre de Santé de la Jeunesse de Balan",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 424,
+      "name": "CS de Bois Poux",
+      "issues": [
+        "code manquant",
+        "section communale manquante",
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 434,
+      "name": "Danita's",
+      "issues": [
+        "code manquant",
+        "catégorie manquante",
+        "statut juridique manquant",
+        "section communale manquante",
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 447,
+      "name": "Hôpital Materno-Infantil  Saint Pierre de Terrier Rouge",
+      "issues": [
+        "code manquant",
+        "section communale manquante",
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 460,
+      "name": "Centre de santé de Corosse",
+      "issues": [
+        "code manquant",
+        "section communale manquante",
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 476,
+      "name": "Dispensaire Lacoma",
+      "issues": [
+        "code partagé",
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 477,
+      "name": "Clinique Materno Infantil de Lacoma",
+      "issues": [
+        "code partagé"
+      ]
+    },
+    {
+      "source_row": 539,
+      "name": "Hopital de l'OFATMA du Nord-Ouest",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 548,
+      "name": "Kay Choublak",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 555,
+      "name": "Centre de Santé sans lit SADA Matheux",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 556,
+      "name": "Hôpital Église de Dieu Réformée",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 557,
+      "name": "Centre de santé Bon Samaritain de Luly",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 558,
+      "name": "Hôpital Nicolas Armand",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 559,
+      "name": "Centro De Salud Sin Camas De Carrefour Poy",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 560,
+      "name": "Day Star Community First Ajd Clinic",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 561,
+      "name": "CSL de Saintard",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 562,
+      "name": "SADA-AME/Délices",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 563,
+      "name": "SADA Fonds Baptiste",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 564,
+      "name": "Mission LIFELINE",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 565,
+      "name": "Centre de santé de Rousseau",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 566,
+      "name": "Clinique st Paul",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 567,
+      "name": "Promoteurs Objectif Zéro Sida (POZ)",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 568,
+      "name": "Clinique Life Collection Mission (LCM)",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 569,
+      "name": "Dispensaire Clinique Saint Paul",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 570,
+      "name": "Clinique Veramed",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 571,
+      "name": "CSL de Cabaret",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 572,
+      "name": "CSL de Bélanger (SADA)",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 573,
+      "name": "Centre de Santé de Casale",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 574,
+      "name": "Centre de santé du Bon samaritain",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 575,
+      "name": "CS St Antoine de Titanyen",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 576,
+      "name": "CS St Gérard",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 577,
+      "name": "CSL de source matelas (SADA)",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 578,
+      "name": "Centre de Santé Mission de l'espoir",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 579,
+      "name": "Family MediCS Clinic",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 580,
+      "name": "Alpha Omega Medico Ministry",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 581,
+      "name": "Centre de Santé Saint Pierre",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 582,
+      "name": "Centre de santé St Vincent de Paul",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 583,
+      "name": "Centre de Santé de Cornillon",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 584,
+      "name": "Centre de Santé sans lit Bethel Dumay",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 585,
+      "name": "Centre De Santé De Dumay (Healing At Mission)",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 586,
+      "name": "Centre de Santé Lucelia Bontemps",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 587,
+      "name": "Centre de Santé Foyer Ste Camille",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 588,
+      "name": "Fondation Bon samaritain en Action",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 589,
+      "name": "Centre de Santé de Double Harvest",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 590,
+      "name": "Centre de Santé de Turbe",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 591,
+      "name": "Clinique Saint EsPrit de Lilavois",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 592,
+      "name": "Sodeth Clinique Hospitalière",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 593,
+      "name": "Centre Hospitalier de Santo",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 594,
+      "name": "Fwaye Ti zanmi Jezi",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 595,
+      "name": "Dispensaire Marie Louise de Jésus - Mixte",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 596,
+      "name": "Centre de Santé des Palmes",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 597,
+      "name": "COSECO",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 598,
+      "name": "Clinique Haiti Gospel Mission",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 599,
+      "name": "Centre Hospitalier de Canaan",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 600,
+      "name": "Cs De Santé Et D'Entrainement De La Croix Des Bouquets",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 601,
+      "name": "Centre de Santé de Corail",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 602,
+      "name": "HCR de Bon Repos",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 603,
+      "name": "Centre De Santé Santo 17",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 604,
+      "name": "Centre De Santé Communautaire De Santo",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 605,
+      "name": "Mennonite de la Croix-des-Bouquets",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 606,
+      "name": "Centre Hospitalier la Sainte Famille",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 607,
+      "name": "Peace Clinic",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 608,
+      "name": "Service MediCS Santé Plus (Esmesap)",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 609,
+      "name": "Logic Global Health Clinique Centre De Santé",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 610,
+      "name": "Mav Maternite Aqua Vivo",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 611,
+      "name": "Centre Hospitalier Eben-Ezer",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 612,
+      "name": "Clinique Jésus le vrai chemin",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 613,
+      "name": "Clinique PROFAMIL",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 614,
+      "name": "Centre Children International Life Line D'Haiti",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 615,
+      "name": "Dispensaire de Bas Boën",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 616,
+      "name": "Hôpital Défilé de Beudet",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 617,
+      "name": "Help Incorporate de Vaudreuil",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 618,
+      "name": "Shalom Clinique MédiCSe",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 619,
+      "name": "Centre de Prévention et de Récupération Nutritionnelle Lespwa Timoun",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 620,
+      "name": "Clinique Communautaire De Meyer Pisaire Bethesa",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 621,
+      "name": "Centre Hospitalier Communautaire Lilavois",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 622,
+      "name": "Centre Hospitalier Prostathospice",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 623,
+      "name": "Centre Hospitalier Dr Harry Bordes de Beudet",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 624,
+      "name": "Hôpital Rebeka Freedman",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 625,
+      "name": "CS de Fonds Verrettes",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 626,
+      "name": "Dispensaire Notre Dame des Pins d'Orianie",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 627,
+      "name": "Centre Sainte Claire - Paroisse Saint Croix",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 628,
+      "name": "Confidence Health Center",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 629,
+      "name": "Hope Clinic Center",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 630,
+      "name": "Centre de Santé Bon Nouvel",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 631,
+      "name": "Cose La Santé",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 632,
+      "name": "Dispensaire de Savane cabri",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 633,
+      "name": "Centre de santé Kay Hypocrate",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 634,
+      "name": "Centre Hospitalier Christ pour tous",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 635,
+      "name": "Centre de La Famille Love a Child",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 636,
+      "name": "Centre de Santé Eau de Vie",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 637,
+      "name": "Centre de Santé de Ganthier",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 638,
+      "name": "CS de Thomazeau",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 639,
+      "name": "Centre de santé Vision de Néhémie",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 640,
+      "name": "Centre de Santé Communautaire Bill Rice",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 641,
+      "name": "Hôpital Wesleyen",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 642,
+      "name": "Maison MédiCSe JESHUA",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 643,
+      "name": "Clinique Fils Brillant",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 644,
+      "name": "Dispensaire Communautaire de Grande Source",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 645,
+      "name": "Clinique D'Espoir",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 646,
+      "name": "La Pinta Clinique",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 647,
+      "name": "Centre MediCS Paradis",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 648,
+      "name": "Hello Docteur",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 649,
+      "name": "Centre De Santé Hello Docteur",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 650,
+      "name": "Blessing Clinic",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 651,
+      "name": "Clinique Bon Samaritain Plaine Mapou",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 652,
+      "name": "Dispensaire Communautaire de Marsucrin",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 653,
+      "name": "Dispensaire Communautaire de Tamarin",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 654,
+      "name": "Dispensaire Méthodiste Source à Philippe",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 655,
+      "name": "centre de Santé St Louis Roi de France",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 656,
+      "name": "Centre World Vision ti Palmiste",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 657,
+      "name": "Clinique Communautaire Nan Sema",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 658,
+      "name": "Pain et Vie Clinic",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 659,
+      "name": "Hôpital Communautaire de Référence Georges Gauvin",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 660,
+      "name": "Dispensaire de Dufour",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 661,
+      "name": "Centre de Santé de Meyer",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 662,
+      "name": "Dispensaire Baudin",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 663,
+      "name": "Dispensaire de Bonhomme",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 664,
+      "name": "Dispensaire Saint Antoine de Fond'Oie",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 665,
+      "name": "Dispensaire Tombe Gateau",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 666,
+      "name": "Centre de Santé Macaya Lib St Etienne",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 667,
+      "name": "Centre de Santé de Trouin",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 668,
+      "name": "Centre de Santé Petit Harpon",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 669,
+      "name": "CS Farnèse Louis Charles de Palmiste à Vin",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 670,
+      "name": "Centre de Santé Carmel Voltaire",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 671,
+      "name": "Clinique Communautaire Sauvé pour Servir",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 672,
+      "name": "Centre materno-infantile",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 673,
+      "name": "Hôpital Sainte-Croix",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 674,
+      "name": "CENTRE de Santé MACAYA-LIB",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 675,
+      "name": "Centre de Santé de Dufort",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 676,
+      "name": "Centre de Santé Biré (New Mission)",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 677,
+      "name": "Centre de santé Marie Jean",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 678,
+      "name": "Centre de santé Petite Rivière (NF)",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 679,
+      "name": "Help Hospital",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 680,
+      "name": "Centre de Santé Lassale",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 681,
+      "name": "Centre de Santé Bacadère",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 682,
+      "name": "Centre de Santé de Croix des Pères",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 683,
+      "name": "Hôpital Camejo",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 684,
+      "name": "Centre de Santé Populaire de Darbone",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 685,
+      "name": "Hôpital Sanatorium de Léogane",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 686,
+      "name": "Centre de Santé Primaire de Darbone",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 687,
+      "name": "Dispensaire de Beauséjour",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 688,
+      "name": "Hôpital Notre Dame",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 689,
+      "name": "Centre de Santé Henry Gérard Desgranges",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 690,
+      "name": "Clinique Méthodiste Siloe",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 691,
+      "name": "Dispensaire APV de Vallue (NF)",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 692,
+      "name": "Centre de Santé de Vialet",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 693,
+      "name": "Centre de Santé de Delattre",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 694,
+      "name": "Centre de Santé Madeleine",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 695,
+      "name": "Dispensaire d’Arnoux",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 696,
+      "name": "Clinique mobile Olivier",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 697,
+      "name": "CS Les Palmes (Besace)",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 698,
+      "name": "CS FONDEFH Bizoton 61",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 699,
+      "name": "Hôpital de carrefour",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 700,
+      "name": "Centre médico-social rivière froide",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 701,
+      "name": "Vision Santé Haiti-Centre Hospitalier de Mahotière",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 702,
+      "name": "Hôpital Adventiste d'Haïti (HAH)",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 703,
+      "name": "CS OMES",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 704,
+      "name": "CSL OBCG",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 705,
+      "name": "Centre de Santé Multi fonctionnel Sous Rail",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 706,
+      "name": "Dispensaire ASCOSADEC",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 707,
+      "name": "CS Mère Térésa",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 708,
+      "name": "CS communauté Frères Unis (NF)",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 709,
+      "name": "ASAD",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 710,
+      "name": "Centre de Santé Tikajou",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 711,
+      "name": "Centre Hospitalier de Carrefour",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 712,
+      "name": "Centre de santé Shekinah",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 713,
+      "name": "Centre de santé Bethesda",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 714,
+      "name": "Centre de Santé Bethesda",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 715,
+      "name": "Centre de Santé Bethel Clef",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 716,
+      "name": "Centre Cookson Hills",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 717,
+      "name": "Centre Hospitalier Docteur Raoul Pierre Louis",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 718,
+      "name": "Centre Hospitalier Peninsula",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 719,
+      "name": "Centre Hospitalier de Mon Repos",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 720,
+      "name": "Dispensaire la Main Tendue de Bertin",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 721,
+      "name": "Dispensaire Marie Louise de Jésus",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 722,
+      "name": "Centre MédiCS de Bertin",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 723,
+      "name": "Grace MediCS Center",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 724,
+      "name": "Complexe Médico-ChirurgiCS de Paloma",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 725,
+      "name": "Clinique Communautaire Bertin Degand",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 726,
+      "name": "Centre de Santé Saint Rock",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 727,
+      "name": "Dispensaire de Taillefer",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 728,
+      "name": "Centre de Santé Populaire de Procy",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 729,
+      "name": "Centre FOSREF Lakay",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 730,
+      "name": "Dispensaire de Plomb Malanga",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 731,
+      "name": "Centre de santé Laval",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 732,
+      "name": "Centre Santé de Laval (Miss Marie Cam)",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 733,
+      "name": "Innocent Super Clinic",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 734,
+      "name": "Centre de Santé de Tranquillité",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 735,
+      "name": "Centre de Santé Hands of Love de la Fondation Cacao",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 736,
+      "name": "Centre Hospitalier Sainte-Catherine Laboure (CHOSCAL)",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 737,
+      "name": "CHAPI",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 738,
+      "name": "Centre MédiCS Nutrition Rosalie Rendu",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 739,
+      "name": "MSF France Drouillard",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 740,
+      "name": "Centre de santé Fondation st Luc",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 741,
+      "name": "Centre de Santé Ste Marie Fondation St Luc",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 742,
+      "name": "Clinique de Santé de Micecc",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 743,
+      "name": "Centre de Santé Familial de L'Eglise Chretienne",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 744,
+      "name": "Centre de santé Lumière",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 745,
+      "name": "Centre MediCS Partners In development (CEMEPID)",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 746,
+      "name": "Clinique st François d'Assise",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 747,
+      "name": "Centre de Santé Power Of God",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 748,
+      "name": "Centre de Nutrition Thérapeutique Ambulatoire",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 749,
+      "name": "Centre MediCSe Jesus de Cite Soleil",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 750,
+      "name": "Centre de Santé Armée du Salut",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 751,
+      "name": "Centre Médico-Populaire Bas Fond Philomène",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 752,
+      "name": "Centre Médico-social de la Saline",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 753,
+      "name": "Hôpital Sage Citymed",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 754,
+      "name": "Hôpital Universitaire la Paix",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 755,
+      "name": "Hôpital Grace Children",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 756,
+      "name": "Hôpital Espoir",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 757,
+      "name": "Hôpital DASH Delmas 48",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 758,
+      "name": "Hôpital Jude Anne (DASH)",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 759,
+      "name": "Centre de Santé CPFO",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 760,
+      "name": "Fondeph",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 761,
+      "name": "Maternité Isaïe Jeanty Universitaire",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 762,
+      "name": "Hôpital de l'OFATMA",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 763,
+      "name": "Centre Médico Social de Petit Place Cazeau (Maternité Sonud)",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 764,
+      "name": "Centre de santé St Martin 1",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 765,
+      "name": "Centre de Santé Saint-Martin II",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 766,
+      "name": "Centre de santé St Paul",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 767,
+      "name": "Hôpital Bernard Mews",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 768,
+      "name": "Centre Hospitalier de Fontaine",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 769,
+      "name": "Centre De Santé Commmunautaire De Cite Bathelemy",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 770,
+      "name": "Centre de Santé Dieu qui donne",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 771,
+      "name": "Hôpital Medicare",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 772,
+      "name": "Peace's Hospital",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 773,
+      "name": "FOSREF",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 774,
+      "name": "Maison la santé Delmas",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 775,
+      "name": "Clinique St Jude",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 776,
+      "name": "MSF Hollande",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 777,
+      "name": "FOSREF Christ Roi",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 778,
+      "name": "Hôpital Missionnaires de la Charité",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 779,
+      "name": "Centre de Santé de l'Harmonie",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 780,
+      "name": "Centre de santé Maïs Gâté",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 781,
+      "name": "Centre Médico Social de Delmas 41",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 782,
+      "name": "Centre Alpha Plus Santé Communautaire",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 783,
+      "name": "Centre MediCS Clini-Plus",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 784,
+      "name": "Centre Medico ChirurgiCS De Gerald Bataille",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 785,
+      "name": "Clini Med",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 786,
+      "name": "Clinic Immaculee De Conception",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 787,
+      "name": "Clinic Saint Louis Marie Monfort",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 788,
+      "name": "Clinique Communautaire J/Phro_ Delmas 32",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 789,
+      "name": "Clinique MediCSe Du Village Afca",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 790,
+      "name": "Complexe MediCS De La Famille (Cmf)",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 791,
+      "name": "Le Bon Berger Clinic Laboratoire",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 792,
+      "name": "Centre de Santé Bon Berger FOSADEC",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 793,
+      "name": "Centre MediCS De Mariani",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 794,
+      "name": "Centre de Santé FACEDHA",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 795,
+      "name": "Hope Alive Clinic Ministries",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 796,
+      "name": "Centre de santé Bon Secours",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 797,
+      "name": "Centre de Santé Communautaire FHED",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 798,
+      "name": "Centre Hospitalier de Gressier",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 799,
+      "name": "Dispensaire de Jasmin",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 800,
+      "name": "Haïti Health Ministries",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 801,
+      "name": "Dispensaire Solo Christus",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 802,
+      "name": "Hope Rising Christian Clinic",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 803,
+      "name": "Dispensaire d’Athis",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 804,
+      "name": "Dispensaire de Bolosse (mission baptiste)",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 805,
+      "name": "Centre de Santé de Kenscoff",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 806,
+      "name": "Hôpital de Fermathe (Mission Baptiste)",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 807,
+      "name": "Dispensaire Notre Dame du Perpétuel Secours de Furcy",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 808,
+      "name": "Dispensaire Godey (Afè nèg kombit)",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 809,
+      "name": "Dispensaire aux Cadets (Afè nèg konbit)",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 810,
+      "name": "Centre de Santé Dr Gérrard Agénor de Aux Cadets",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 811,
+      "name": "Dispensaire de Greffin (Mission Baptiste)",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 812,
+      "name": "Dispensaire de Dumisseau (Afè nèg konbit)",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 813,
+      "name": "Dispensaire de Robin (Mission Baptiste)",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 814,
+      "name": "Citymed de Pétion ville",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 815,
+      "name": "Centre de santé Monsanto Petit",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 816,
+      "name": "Hôpital Eliazar Germain",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 817,
+      "name": "Centre de Santé Notre Dame du Cap",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 818,
+      "name": "Centre Médico social Thomassin 25",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 819,
+      "name": "Jean Mossanto Petit de Jalousie",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 820,
+      "name": "Hôpital St Landry (DASH)",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 821,
+      "name": "Hopital Sainte Claire - DASH Laboule 11",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 822,
+      "name": "Centre de Santé OPORHA de Bois Moquette",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 823,
+      "name": "CS retraite sainte Anne",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 824,
+      "name": "Centre De Santé Zafè Fanm",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 825,
+      "name": "Mon Santo Petit de Grenier",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 826,
+      "name": "CS Canapé Vert",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 827,
+      "name": "Csl Family Center",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 828,
+      "name": "Centre de Santé CSebasse",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 829,
+      "name": "CS Morne Hercule",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 830,
+      "name": "CS Morne Lazarre",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 831,
+      "name": "Hôpital de la Communauté Haïtienne",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 832,
+      "name": "CS de Pernier",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 833,
+      "name": "CS philantropique de Dupont",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 834,
+      "name": "Centre De Santé Rosa Mina De Diègue",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 835,
+      "name": "Clinique Repheka Centre Communautaire de Pernier",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 836,
+      "name": "Centre Hospital De Pernier",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 837,
+      "name": "Dispensaire Sainte Claire",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 838,
+      "name": "Centre de Santé Nazaréen",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 839,
+      "name": "Hôpital de l'Université d'État d'Haïti (HUEH)",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 840,
+      "name": "Centre de Santé Aurore du Bel Air",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 841,
+      "name": "Hôpital du Canapé Vert",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 842,
+      "name": "Centre de Santé de Portail Léogâne",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 843,
+      "name": "Dispensaire Saint Antoine des Soeurs de Sainte Anne",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 844,
+      "name": "Sant Santé Kominote Snelak",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 845,
+      "name": "Complexe Médico Social de Solino",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 846,
+      "name": "Centre de Santé Richard Allen",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 847,
+      "name": "Hôpital Français",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 848,
+      "name": "Centre de psychiatrie Mars & Kline",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 849,
+      "name": "Hôpital Saint François de Sales",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 850,
+      "name": "CSL SODEC",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 851,
+      "name": "PROFAMIL 2",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 852,
+      "name": "Sanatorium de Port-au-Prince",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 853,
+      "name": "Hôpital Saint-Joseph",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 854,
+      "name": "Fondation Pédodontique",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 855,
+      "name": "Centre de Santé des Prés",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 856,
+      "name": "Clinique la Renaissance",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 857,
+      "name": "Association pour la Promotion de la Santé Intégrale de la Famille (APROSIFA)",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 858,
+      "name": "Centre de santé Sainte Elizabeth",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 859,
+      "name": "Centre de santé Caravelle",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 860,
+      "name": "Les Centres GHESKIO",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 861,
+      "name": "Centre de santé Béthanie",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 862,
+      "name": "Clinique Bethesda de l'Action Missionnaire Globale d'Haiti (Bel-Air)",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 863,
+      "name": "Hôpital Saint Esprit",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 864,
+      "name": "Hôpital Sapiens",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 865,
+      "name": "Centre Materno-ChirugiCS de l'UMO",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 866,
+      "name": "FOSREF Lalue",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 867,
+      "name": "Maternité de Christ-Roi/Hôpital de Bourdon",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 868,
+      "name": "CS Cité Canada (Haut Turgeau)",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 869,
+      "name": "CEMEAH",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 870,
+      "name": "Institut FAME PEREO",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 871,
+      "name": "Centre Hospitalier Medimax",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 872,
+      "name": "Hôpital St Louis",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 873,
+      "name": "Centre de Santé Siloe MediCS",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 874,
+      "name": "Centre de santé communautaire",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 875,
+      "name": "Centre de santé Bienfaisance",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 876,
+      "name": "Clinique Familiale",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 877,
+      "name": "Plurimédic",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 878,
+      "name": "Centre Médico Social De Nazon",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 879,
+      "name": "Centre de Santé de Cité Georges",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 880,
+      "name": "Centre Hospitalier Sainte Marie",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 881,
+      "name": "Clinique De L'Espoir",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 882,
+      "name": "CentreMédiCS Oipeme",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 883,
+      "name": "Fondation pour le Développement et l'Encadrement de la Famille Haïtienne (FONDEFH)",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 884,
+      "name": "Hospice Saint Joseph de Norwich Outreach To Haiti",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 885,
+      "name": "Centre de Soins La Providence (CDSP)",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 886,
+      "name": "Sante Fanm Pou Demen",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 887,
+      "name": "Centre Medico Social Alfa Et Omega",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 888,
+      "name": "Centre De Techmedecine D'Haiti",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 889,
+      "name": "Hôpital Fondation Oeuvre De La Grace",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 890,
+      "name": "Centre de Santé Carifont de Fontamara",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 891,
+      "name": "Centre de santé Martissant",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 892,
+      "name": "Centre de Santé St Michel",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 893,
+      "name": "CS de St Jude",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 894,
+      "name": "CS Communautaire Cité de l'Éternel",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 895,
+      "name": "Hôpital Saint James (DASH Martissant 4)",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 896,
+      "name": "Hôpital Sans Frontière",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 897,
+      "name": "Centre de Santé de Fontamara",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 898,
+      "name": "Centre MédiCS de Martissant",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 899,
+      "name": "Centre de Santé Mission Évangelique Baptiste Béthesda D'Haiti",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 900,
+      "name": "Clinique Communautaire de Martissant (FONDEFH)",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 901,
+      "name": "Centre de Santé de la Croix-des-Missions",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 902,
+      "name": "Centre Hospitalier Family Memorial MediCS Center",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 903,
+      "name": "King's Hospital",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 904,
+      "name": "Office MédiCS de Clercine (OMEC)",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 905,
+      "name": "Centre de Diagnostique de Tabarre (Cdt)",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 906,
+      "name": "Centre de Santé Communautaire Eurica",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 907,
+      "name": "Centre Hospitalier Bethesda (Chb)",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 908,
+      "name": "Centre Hospitalier de Tabarre",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 909,
+      "name": "Centre D'Education Sanitaire Et MediCS (CESMED)",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 910,
+      "name": "GHESKIO/ Imis",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 911,
+      "name": "Hôpital Nos Petits Frères et Soeurs",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 912,
+      "name": "Hôpital St Luc",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 913,
+      "name": "Hôpital DASH Tabarre",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 914,
+      "name": "Centre MediCS Lyro",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 915,
+      "name": "MSF Belgique",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 916,
+      "name": "Centre de Santé de Torcelle",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 917,
+      "name": "Holy Spirit Centre D'Obstetrique Et de Gynecologie",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 918,
+      "name": "Centre de Santé Communautaire de Midha",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 919,
+      "name": "Centre de Santé Salem",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 920,
+      "name": "Saint Andre MediCS Center",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 1009,
+      "name": "Centre Médico Social de Martineau",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 1029,
+      "name": "Point Fixe Marebriole Heart to Heart",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 1030,
+      "name": "Heart to Heart Center International",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 1031,
+      "name": "CS Corail Lamothe",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    },
+    {
+      "source_row": 1069,
+      "name": "Centre Medico Social Belamy Hilaire",
+      "issues": [
+        "fonctionnement à vérifier"
+      ]
+    }
+  ]
+}
