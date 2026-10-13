@@ -114,7 +114,7 @@ class AdminAccessDenied extends StatelessWidget {
                   textAlign: TextAlign.center,
                   style: Theme.of(context).textTheme.headlineSmall?.copyWith(
                     color: AdminColors.ink,
-                    fontWeight: FontWeight.w900,
+                    fontWeight: FontWeight.w700,
                   ),
                 ),
                 const SizedBox(height: 10),
@@ -139,7 +139,7 @@ class AdminAccessDenied extends StatelessWidget {
                         style: TextStyle(
                           color: AdminColors.primaryDark,
                           fontSize: 12,
-                          fontWeight: FontWeight.w800,
+                          fontWeight: FontWeight.w600,
                         ),
                       ),
                       const SizedBox(height: 7),

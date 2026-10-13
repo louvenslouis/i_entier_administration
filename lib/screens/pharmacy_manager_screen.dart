@@ -147,7 +147,7 @@ class _PharmacyManagerScreenState extends State<PharmacyManagerScreen> {
                   'Régulation des pharmacies',
                   style: Theme.of(context).textTheme.headlineSmall?.copyWith(
                     color: AdminColors.ink,
-                    fontWeight: FontWeight.w900,
+                    fontWeight: FontWeight.w700,
                   ),
                 ),
                 const SizedBox(height: 6),
@@ -294,7 +294,7 @@ class _PharmacyRegulationCard extends StatelessWidget {
                       style: const TextStyle(
                         color: AdminColors.ink,
                         fontSize: 18,
-                        fontWeight: FontWeight.w900,
+                        fontWeight: FontWeight.w700,
                       ),
                     ),
                     Text(
@@ -325,7 +325,7 @@ class _PharmacyRegulationCard extends StatelessWidget {
                   pharmacy.status.label,
                   style: TextStyle(
                     color: statusColor,
-                    fontWeight: FontWeight.w800,
+                    fontWeight: FontWeight.w600,
                     fontSize: 12,
                   ),
                 ),

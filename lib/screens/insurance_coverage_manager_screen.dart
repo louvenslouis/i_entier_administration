@@ -157,7 +157,7 @@ class _CoverageHeader extends StatelessWidget {
                       style: TextStyle(
                         color: AdminColors.ink,
                         fontSize: 26,
-                        fontWeight: FontWeight.w900,
+                        fontWeight: FontWeight.w700,
                       ),
                     ),
                     SizedBox(height: 4),
@@ -249,7 +249,7 @@ class _PendingBadge extends StatelessWidget {
       '$count en attente',
       style: const TextStyle(
         color: AdminColors.primaryDark,
-        fontWeight: FontWeight.w900,
+        fontWeight: FontWeight.w700,
       ),
     ),
   );
@@ -310,7 +310,7 @@ class _CoverageTile extends StatelessWidget {
                           style: const TextStyle(
                             color: AdminColors.ink,
                             fontSize: 17,
-                            fontWeight: FontWeight.w900,
+                            fontWeight: FontWeight.w700,
                           ),
                         ),
                         const SizedBox(height: 2),
@@ -804,7 +804,7 @@ class _CardPreview extends StatelessWidget {
         'Carte OFATMA — $label',
         style: const TextStyle(
           color: AdminColors.ink,
-          fontWeight: FontWeight.w900,
+          fontWeight: FontWeight.w700,
         ),
       ),
       const SizedBox(height: 8),
@@ -862,7 +862,7 @@ class _StatusBadge extends StatelessWidget {
     ),
     child: Text(
       label,
-      style: TextStyle(color: color, fontWeight: FontWeight.w800, fontSize: 12),
+      style: TextStyle(color: color, fontWeight: FontWeight.w600, fontSize: 12),
     ),
   );
 }
@@ -918,7 +918,7 @@ class _EmptyCoverageList extends StatelessWidget {
                 : 'Aucune couverture dans cette vue.',
             style: const TextStyle(
               color: AdminColors.ink,
-              fontWeight: FontWeight.w800,
+              fontWeight: FontWeight.w600,
             ),
           ),
         ],

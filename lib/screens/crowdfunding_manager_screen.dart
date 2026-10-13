@@ -307,7 +307,7 @@ class _CrowdfundingManagerScreenState extends State<CrowdfundingManagerScreen> {
                           style: TextStyle(
                             color: AdminColors.navy,
                             fontSize: 19,
-                            fontWeight: FontWeight.w900,
+                            fontWeight: FontWeight.w700,
                           ),
                         ),
                       ),
@@ -423,7 +423,7 @@ class _CrowdfundingAdminHeader extends StatelessWidget {
                 style: TextStyle(
                   color: Color(0xFFA9F0D8),
                   fontSize: 11,
-                  fontWeight: FontWeight.w900,
+                  fontWeight: FontWeight.w700,
                   letterSpacing: 1.5,
                 ),
               ),
@@ -433,7 +433,7 @@ class _CrowdfundingAdminHeader extends StatelessWidget {
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 25,
-                  fontWeight: FontWeight.w900,
+                  fontWeight: FontWeight.w700,
                   letterSpacing: -.5,
                 ),
               ),
@@ -554,7 +554,7 @@ class _AdminMetricCard extends StatelessWidget {
                 style: const TextStyle(
                   color: AdminColors.navy,
                   fontSize: 19,
-                  fontWeight: FontWeight.w900,
+                  fontWeight: FontWeight.w700,
                 ),
               ),
               Text(
@@ -610,7 +610,7 @@ class _AdminCampaignCard extends StatelessWidget {
           style: const TextStyle(
             color: AdminColors.navy,
             fontSize: 20,
-            fontWeight: FontWeight.w900,
+            fontWeight: FontWeight.w700,
           ),
         ),
         const SizedBox(height: 5),
@@ -722,7 +722,7 @@ class _ContributionCard extends StatelessWidget {
               style: const TextStyle(
                 color: AdminColors.navy,
                 fontSize: 23,
-                fontWeight: FontWeight.w900,
+                fontWeight: FontWeight.w700,
               ),
             ),
             const SizedBox(height: 5),
@@ -972,7 +972,7 @@ class _InfoBadge extends StatelessWidget {
             style: TextStyle(
               color: effectiveColor,
               fontSize: 11,
-              fontWeight: FontWeight.w900,
+              fontWeight: FontWeight.w700,
             ),
           ),
         ],
@@ -998,7 +998,7 @@ class _DataPoint extends StatelessWidget {
           style: const TextStyle(
             color: AdminColors.muted,
             fontSize: 10,
-            fontWeight: FontWeight.w800,
+            fontWeight: FontWeight.w600,
             letterSpacing: .6,
           ),
         ),
@@ -1050,7 +1050,7 @@ class _AdminFundingEmpty extends StatelessWidget {
             style: const TextStyle(
               color: AdminColors.navy,
               fontSize: 18,
-              fontWeight: FontWeight.w900,
+              fontWeight: FontWeight.w700,
             ),
           ),
           const SizedBox(height: 6),

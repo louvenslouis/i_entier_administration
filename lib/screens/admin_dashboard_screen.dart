@@ -310,99 +310,24 @@ class _AdminDashboardScreenState extends State<AdminDashboardScreen> {
         appBar: desktop
             ? null
             : AppBar(
-                title: Text(switch (_selectedSection) {
-                  _AdminSection.applications => 'Demandes',
-                  _AdminSection.pharmacies => 'Pharmacies',
-                  _AdminSection.traditionalMedicine =>
-                    'Médecine Traditionnelle',
-                  _AdminSection.insuranceCoverages => 'Couvertures OFATMA',
-                  _AdminSection.healthCredit => 'Crédit Santé',
-                  _AdminSection.rescue => 'I-Entier Rescue',
-                  _AdminSection.mobileClinics => 'Clinique Mobile',
-                  _AdminSection.crowdfunding => 'Financement solidaire',
-                  _AdminSection.diagnostics => 'Diagnostic assisté',
-                }, style: const TextStyle(fontWeight: FontWeight.w900)),
+                title: Text(
+                  switch (_selectedSection) {
+                    _AdminSection.applications => 'Demandes',
+                    _AdminSection.pharmacies => 'Pharmacies',
+                    _AdminSection.traditionalMedicine =>
+                      'Médecine Traditionnelle',
+                    _AdminSection.insuranceCoverages => 'Couvertures OFATMA',
+                    _AdminSection.healthCredit => 'Crédit Santé',
+                    _AdminSection.rescue => 'I-Entier Rescue',
+                    _AdminSection.mobileClinics => 'Clinique Mobile',
+                    _AdminSection.crowdfunding => 'Financement solidaire',
+                    _AdminSection.diagnostics => 'Diagnostic assisté',
+                  },
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                  style: const TextStyle(fontWeight: FontWeight.w700),
+                ),
                 actions: [
-                  PopupMenuButton<_AdminSection>(
-                    tooltip: 'Changer de section',
-                    initialValue: _selectedSection,
-                    onSelected: (value) =>
-                        setState(() => _selectedSection = value),
-                    itemBuilder: (context) => const [
-                      PopupMenuItem(
-                        value: _AdminSection.applications,
-                        child: ListTile(
-                          contentPadding: EdgeInsets.zero,
-                          leading: Icon(Icons.fact_check_outlined),
-                          title: Text('Demandes'),
-                        ),
-                      ),
-                      PopupMenuItem(
-                        value: _AdminSection.pharmacies,
-                        child: ListTile(
-                          contentPadding: EdgeInsets.zero,
-                          leading: Icon(Icons.local_pharmacy_outlined),
-                          title: Text('Pharmacies'),
-                        ),
-                      ),
-                      PopupMenuItem(
-                        value: _AdminSection.traditionalMedicine,
-                        child: ListTile(
-                          contentPadding: EdgeInsets.zero,
-                          leading: Icon(Icons.spa_outlined),
-                          title: Text('Médecine Traditionnelle'),
-                        ),
-                      ),
-                      PopupMenuItem(
-                        value: _AdminSection.insuranceCoverages,
-                        child: ListTile(
-                          contentPadding: EdgeInsets.zero,
-                          leading: Icon(Icons.verified_user_outlined),
-                          title: Text('Couvertures OFATMA'),
-                        ),
-                      ),
-                      PopupMenuItem(
-                        value: _AdminSection.healthCredit,
-                        child: ListTile(
-                          contentPadding: EdgeInsets.zero,
-                          leading: Icon(Icons.credit_score_outlined),
-                          title: Text('Crédit Santé'),
-                        ),
-                      ),
-                      PopupMenuItem(
-                        value: _AdminSection.rescue,
-                        child: ListTile(
-                          contentPadding: EdgeInsets.zero,
-                          leading: Icon(Icons.health_and_safety_outlined),
-                          title: Text('I-Entier Rescue'),
-                        ),
-                      ),
-                      PopupMenuItem(
-                        value: _AdminSection.mobileClinics,
-                        child: ListTile(
-                          contentPadding: EdgeInsets.zero,
-                          leading: Icon(Icons.local_shipping_outlined),
-                          title: Text('Clinique Mobile'),
-                        ),
-                      ),
-                      PopupMenuItem(
-                        value: _AdminSection.crowdfunding,
-                        child: ListTile(
-                          contentPadding: EdgeInsets.zero,
-                          leading: Icon(Icons.volunteer_activism_outlined),
-                          title: Text('Financement solidaire'),
-                        ),
-                      ),
-                      PopupMenuItem(
-                        value: _AdminSection.diagnostics,
-                        child: ListTile(
-                          contentPadding: EdgeInsets.zero,
-                          leading: Icon(Icons.account_tree_outlined),
-                          title: Text('Diagnostic assisté'),
-                        ),
-                      ),
-                    ],
-                  ),
                   IconButton(
                     tooltip: 'Déconnexion',
                     onPressed: () => SupabaseConfig.client.auth.signOut(),
@@ -410,6 +335,22 @@ class _AdminDashboardScreenState extends State<AdminDashboardScreen> {
                   ),
                   const SizedBox(width: 8),
                 ],
+              ),
+        drawer: desktop
+            ? null
+            : Drawer(
+                backgroundColor: Colors.white,
+                child: SafeArea(
+                  child: _AdminSidebar(
+                    user: widget.user,
+                    selectedSection: _selectedSection,
+                    onSectionSelected: (value) {
+                      Navigator.pop(context);
+                      setState(() => _selectedSection = value);
+                    },
+                    onSignOut: () => SupabaseConfig.client.auth.signOut(),
+                  ),
+                ),
               ),
         body: SafeArea(
           child: Row(
@@ -547,96 +488,79 @@ class _AdminSidebar extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         const AdminBrand(),
-        const SizedBox(height: 42),
-        _SidebarItem(
-          icon: Icons.fact_check_outlined,
-          label: 'Demandes',
-          selected: selectedSection == _AdminSection.applications,
-          onTap: () => onSectionSelected(_AdminSection.applications),
-        ),
-        const SizedBox(height: 7),
-        _SidebarItem(
-          icon: Icons.local_pharmacy_outlined,
-          label: 'Pharmacies',
-          selected: selectedSection == _AdminSection.pharmacies,
-          onTap: () => onSectionSelected(_AdminSection.pharmacies),
-        ),
-        const SizedBox(height: 7),
-        _SidebarItem(
-          icon: Icons.spa_outlined,
-          label: 'Médecine Traditionnelle',
-          selected: selectedSection == _AdminSection.traditionalMedicine,
-          onTap: () => onSectionSelected(_AdminSection.traditionalMedicine),
-        ),
-        const SizedBox(height: 7),
-        _SidebarItem(
-          icon: Icons.verified_user_outlined,
-          label: 'Couvertures OFATMA',
-          selected: selectedSection == _AdminSection.insuranceCoverages,
-          onTap: () => onSectionSelected(_AdminSection.insuranceCoverages),
-        ),
-        const SizedBox(height: 7),
-        _SidebarItem(
-          icon: Icons.credit_score_outlined,
-          label: 'Crédit Santé',
-          selected: selectedSection == _AdminSection.healthCredit,
-          onTap: () => onSectionSelected(_AdminSection.healthCredit),
-        ),
-        const SizedBox(height: 7),
-        _SidebarItem(
-          icon: Icons.health_and_safety_outlined,
-          label: 'I-Entier Rescue',
-          selected: selectedSection == _AdminSection.rescue,
-          onTap: () => onSectionSelected(_AdminSection.rescue),
-        ),
-        const SizedBox(height: 7),
-        _SidebarItem(
-          icon: Icons.local_shipping_outlined,
-          label: 'Clinique Mobile',
-          selected: selectedSection == _AdminSection.mobileClinics,
-          onTap: () => onSectionSelected(_AdminSection.mobileClinics),
-        ),
-        const SizedBox(height: 7),
-        _SidebarItem(
-          icon: Icons.volunteer_activism_outlined,
-          label: 'Financement solidaire',
-          selected: selectedSection == _AdminSection.crowdfunding,
-          onTap: () => onSectionSelected(_AdminSection.crowdfunding),
-        ),
-        const SizedBox(height: 7),
-        _SidebarItem(
-          icon: Icons.account_tree_outlined,
-          label: 'Diagnostic assisté',
-          selected: selectedSection == _AdminSection.diagnostics,
-          onTap: () => onSectionSelected(_AdminSection.diagnostics),
-        ),
-        const SizedBox(height: 22),
-        Container(
-          width: double.infinity,
-          padding: const EdgeInsets.all(14),
-          decoration: BoxDecoration(
-            color: const Color(0xFFF7F9FC),
-            borderRadius: BorderRadius.circular(14),
-          ),
-          child: const Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
+        const SizedBox(height: 24),
+        Expanded(
+          child: ListView(
+            padding: EdgeInsets.zero,
             children: [
-              Icon(Icons.shield_outlined, color: AdminColors.success, size: 19),
-              SizedBox(width: 9),
-              Expanded(
-                child: Text(
-                  'Toutes les décisions sont journalisées.',
-                  style: TextStyle(
-                    color: AdminColors.muted,
-                    fontSize: 12,
-                    height: 1.4,
-                  ),
-                ),
+              const SizedBox(height: 8),
+              _SidebarItem(
+                icon: Icons.fact_check_outlined,
+                label: 'Demandes',
+                selected: selectedSection == _AdminSection.applications,
+                onTap: () => onSectionSelected(_AdminSection.applications),
+              ),
+              const SizedBox(height: 7),
+              _SidebarItem(
+                icon: Icons.local_pharmacy_outlined,
+                label: 'Pharmacies',
+                selected: selectedSection == _AdminSection.pharmacies,
+                onTap: () => onSectionSelected(_AdminSection.pharmacies),
+              ),
+              const SizedBox(height: 7),
+              _SidebarItem(
+                icon: Icons.spa_outlined,
+                label: 'Médecine Traditionnelle',
+                selected: selectedSection == _AdminSection.traditionalMedicine,
+                onTap: () =>
+                    onSectionSelected(_AdminSection.traditionalMedicine),
+              ),
+              const SizedBox(height: 7),
+              _SidebarItem(
+                icon: Icons.verified_user_outlined,
+                label: 'Couvertures OFATMA',
+                selected: selectedSection == _AdminSection.insuranceCoverages,
+                onTap: () =>
+                    onSectionSelected(_AdminSection.insuranceCoverages),
+              ),
+              const SizedBox(height: 7),
+              _SidebarItem(
+                icon: Icons.credit_score_outlined,
+                label: 'Crédit Santé',
+                selected: selectedSection == _AdminSection.healthCredit,
+                onTap: () => onSectionSelected(_AdminSection.healthCredit),
+              ),
+              const SizedBox(height: 7),
+              _SidebarItem(
+                icon: Icons.health_and_safety_outlined,
+                label: 'I-Entier Rescue',
+                selected: selectedSection == _AdminSection.rescue,
+                onTap: () => onSectionSelected(_AdminSection.rescue),
+              ),
+              const SizedBox(height: 7),
+              _SidebarItem(
+                icon: Icons.local_shipping_outlined,
+                label: 'Clinique Mobile',
+                selected: selectedSection == _AdminSection.mobileClinics,
+                onTap: () => onSectionSelected(_AdminSection.mobileClinics),
+              ),
+              const SizedBox(height: 7),
+              _SidebarItem(
+                icon: Icons.volunteer_activism_outlined,
+                label: 'Financement solidaire',
+                selected: selectedSection == _AdminSection.crowdfunding,
+                onTap: () => onSectionSelected(_AdminSection.crowdfunding),
+              ),
+              const SizedBox(height: 7),
+              _SidebarItem(
+                icon: Icons.account_tree_outlined,
+                label: 'Diagnostic assisté',
+                selected: selectedSection == _AdminSection.diagnostics,
+                onTap: () => onSectionSelected(_AdminSection.diagnostics),
               ),
             ],
           ),
         ),
-        const Spacer(),
         const Divider(color: AdminColors.border),
         const SizedBox(height: 10),
         Row(
@@ -653,7 +577,7 @@ class _AdminSidebar extends StatelessWidget {
                 _initials(user.displayName ?? user.email ?? 'Admin'),
                 style: const TextStyle(
                   color: Colors.white,
-                  fontWeight: FontWeight.w900,
+                  fontWeight: FontWeight.w700,
                 ),
               ),
             ),
@@ -668,7 +592,7 @@ class _AdminSidebar extends StatelessWidget {
                     overflow: TextOverflow.ellipsis,
                     style: const TextStyle(
                       color: AdminColors.ink,
-                      fontWeight: FontWeight.w800,
+                      fontWeight: FontWeight.w600,
                     ),
                   ),
                   Text(
@@ -710,7 +634,7 @@ class _SidebarItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Material(
-    color: selected ? AdminColors.primarySoft : Colors.transparent,
+    color: selected ? AdminColors.primary : Colors.transparent,
     borderRadius: BorderRadius.circular(13),
     child: InkWell(
       onTap: onTap,
@@ -721,7 +645,7 @@ class _SidebarItem extends StatelessWidget {
           children: [
             Icon(
               icon,
-              color: selected ? AdminColors.primary : AdminColors.muted,
+              color: selected ? Colors.white : AdminColors.muted,
               size: 21,
             ),
             const SizedBox(width: 12),
@@ -729,8 +653,8 @@ class _SidebarItem extends StatelessWidget {
               child: Text(
                 label,
                 style: TextStyle(
-                  color: selected ? AdminColors.primaryDark : AdminColors.muted,
-                  fontWeight: FontWeight.w800,
+                  color: selected ? Colors.white : AdminColors.ink,
+                  fontWeight: FontWeight.w600,
                 ),
               ),
             ),
@@ -811,11 +735,6 @@ class _DashboardContent extends StatelessWidget {
                 Text(
                   'Validation des professionnels',
                   style: Theme.of(context).textTheme.headlineMedium,
-                ),
-                const SizedBox(height: 7),
-                const Text(
-                  'Examinez les informations avant d’autoriser une présence dans l’annuaire.',
-                  style: TextStyle(color: AdminColors.muted, fontSize: 16),
                 ),
                 const SizedBox(height: 24),
                 LayoutBuilder(
@@ -958,7 +877,7 @@ class _DashboardContent extends StatelessWidget {
                         style: const TextStyle(
                           color: AdminColors.ink,
                           fontSize: 18,
-                          fontWeight: FontWeight.w900,
+                          fontWeight: FontWeight.w700,
                         ),
                       ),
                     ),
@@ -1059,7 +978,7 @@ class _MetricCard extends StatelessWidget {
                 style: const TextStyle(
                   color: AdminColors.ink,
                   fontSize: 20,
-                  fontWeight: FontWeight.w900,
+                  fontWeight: FontWeight.w700,
                 ),
               ),
               Text(
@@ -1100,7 +1019,7 @@ class _FilterChip extends StatelessWidget {
       color: selected ? AdminColors.primary : AdminColors.border,
     ),
     labelStyle: TextStyle(
-      color: selected ? AdminColors.primaryDark : AdminColors.muted,
+      color: selected ? AdminColors.primaryDark : AdminColors.ink,
       fontWeight: FontWeight.w700,
       fontSize: 12,
     ),
@@ -1162,7 +1081,7 @@ class _ApplicationCard extends StatelessWidget {
                     style: const TextStyle(
                       color: AdminColors.ink,
                       fontSize: 17,
-                      fontWeight: FontWeight.w900,
+                      fontWeight: FontWeight.w700,
                     ),
                   ),
                   const SizedBox(height: 4),
@@ -1294,7 +1213,7 @@ class _StatusBadge extends StatelessWidget {
         style: TextStyle(
           color: foreground,
           fontSize: 11,
-          fontWeight: FontWeight.w900,
+          fontWeight: FontWeight.w700,
         ),
       ),
     );
@@ -1345,7 +1264,7 @@ class _ApplicationDetailDialog extends StatelessWidget {
                         style: const TextStyle(
                           color: AdminColors.ink,
                           fontSize: 22,
-                          fontWeight: FontWeight.w900,
+                          fontWeight: FontWeight.w700,
                         ),
                       ),
                     ],
@@ -1492,7 +1411,7 @@ class _ApplicationDetailDialog extends StatelessWidget {
                             'Motif du dernier refus',
                             style: TextStyle(
                               color: AdminColors.danger,
-                              fontWeight: FontWeight.w900,
+                              fontWeight: FontWeight.w700,
                             ),
                           ),
                           const SizedBox(height: 5),
@@ -1566,7 +1485,7 @@ class _DetailSection extends StatelessWidget {
           style: const TextStyle(
             color: AdminColors.ink,
             fontSize: 16,
-            fontWeight: FontWeight.w900,
+            fontWeight: FontWeight.w700,
           ),
         ),
         const SizedBox(height: 12),
@@ -1649,7 +1568,7 @@ class _EmptyApplications extends StatelessWidget {
             textAlign: TextAlign.center,
             style: TextStyle(
               color: AdminColors.ink,
-              fontWeight: FontWeight.w900,
+              fontWeight: FontWeight.w700,
             ),
           ),
           SizedBox(height: 5),

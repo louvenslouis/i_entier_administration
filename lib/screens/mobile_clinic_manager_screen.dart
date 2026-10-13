@@ -392,7 +392,7 @@ class _ClinicMetrics extends StatelessWidget {
                     'Zones couvertes',
                     style: TextStyle(
                       color: AdminColors.ink,
-                      fontWeight: FontWeight.w900,
+                      fontWeight: FontWeight.w700,
                     ),
                   ),
                   const SizedBox(height: 8),
@@ -449,7 +449,7 @@ class _MetricCard extends StatelessWidget {
                   style: const TextStyle(
                     color: AdminColors.ink,
                     fontSize: 23,
-                    fontWeight: FontWeight.w900,
+                    fontWeight: FontWeight.w700,
                   ),
                 ),
                 Text(label, style: const TextStyle(fontSize: 11)),
@@ -508,7 +508,7 @@ class _ClinicAdminCard extends StatelessWidget {
                     style: const TextStyle(
                       color: AdminColors.ink,
                       fontSize: 17,
-                      fontWeight: FontWeight.w900,
+                      fontWeight: FontWeight.w700,
                     ),
                   ),
                   _StatusBadge(status: clinic.status),
@@ -709,7 +709,7 @@ class _DocumentTile extends StatelessWidget {
       url.isEmpty ? Icons.warning_amber_rounded : Icons.description_outlined,
       color: url.isEmpty ? AdminColors.warning : AdminColors.primary,
     ),
-    title: Text(label, style: const TextStyle(fontWeight: FontWeight.w800)),
+    title: Text(label, style: const TextStyle(fontWeight: FontWeight.w600)),
     subtitle: Text(
       url.isEmpty
           ? (optional
@@ -750,7 +750,7 @@ class _StatusBadge extends StatelessWidget {
         style: TextStyle(
           color: color,
           fontSize: 11,
-          fontWeight: FontWeight.w900,
+          fontWeight: FontWeight.w700,
         ),
       ),
     );
@@ -778,7 +778,7 @@ class _InfoPill extends StatelessWidget {
           style: const TextStyle(
             color: AdminColors.primaryDark,
             fontSize: 11,
-            fontWeight: FontWeight.w800,
+            fontWeight: FontWeight.w600,
           ),
         ),
       ],
@@ -794,7 +794,7 @@ class _DialogHeading extends StatelessWidget {
     text,
     style: const TextStyle(
       color: AdminColors.primaryDark,
-      fontWeight: FontWeight.w900,
+      fontWeight: FontWeight.w700,
     ),
   );
 }

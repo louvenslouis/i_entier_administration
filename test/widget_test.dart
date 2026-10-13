@@ -184,6 +184,60 @@ void main() {
     );
     expect(find.text('Aucune campagne dans cette vue'), findsOneWidget);
   });
+  testWidgets('le tiroir mobile donne accès aux dernières sections', (
+    tester,
+  ) async {
+    tester.view.physicalSize = const Size(390, 640);
+    await tester.pumpWidget(
+      _dashboard(
+        _FakeAdminRepository(const []),
+        diagnosticRepository: _EmptyDiagnosticRepository(),
+      ),
+    );
+    await tester.pumpAndSettle();
+    tester.state<ScaffoldState>(find.byType(Scaffold).first).openDrawer();
+    await tester.pumpAndSettle();
+    final target = find.text('Diagnostic assisté');
+    await tester.scrollUntilVisible(
+      target,
+      200,
+      scrollable: find.descendant(
+        of: find.byType(Drawer),
+        matching: find.byType(Scrollable),
+      ),
+    );
+    await tester.tap(target);
+    await tester.pumpAndSettle();
+    expect(
+      tester.state<ScaffoldState>(find.byType(Scaffold).first).isDrawerOpen,
+      isFalse,
+    );
+    expect(find.text('Gestionnaire du diagnostic assisté'), findsOneWidget);
+    expect(tester.takeException(), isNull);
+  });
+
+  testWidgets('le menu latéral reste utilisable dans une fenêtre basse', (
+    tester,
+  ) async {
+    tester.view.physicalSize = const Size(1200, 500);
+    await tester.pumpWidget(
+      _dashboard(
+        _FakeAdminRepository(const []),
+        diagnosticRepository: _EmptyDiagnosticRepository(),
+      ),
+    );
+    await tester.pumpAndSettle();
+    final target = find.text('Diagnostic assisté');
+    await tester.scrollUntilVisible(
+      target,
+      200,
+      scrollable: find.byType(Scrollable).first,
+    );
+    await tester.tap(target);
+    await tester.pumpAndSettle();
+    expect(find.text('Gestionnaire du diagnostic assisté'), findsOneWidget);
+    expect(tester.takeException(), isNull);
+  });
 }
 
 Widget _dashboard(

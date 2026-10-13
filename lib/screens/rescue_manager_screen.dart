@@ -396,7 +396,7 @@ class _RescueAdminHeader extends StatelessWidget {
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 22,
-                  fontWeight: FontWeight.w900,
+                  fontWeight: FontWeight.w700,
                 ),
               ),
               SizedBox(height: 3),
@@ -422,7 +422,7 @@ class _RescueAdminHeader extends StatelessWidget {
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 10,
-                  fontWeight: FontWeight.w900,
+                  fontWeight: FontWeight.w700,
                 ),
               ),
             ],
@@ -680,7 +680,7 @@ class _MetricCard extends StatelessWidget {
                 style: const TextStyle(
                   color: AdminColors.ink,
                   fontSize: 25,
-                  fontWeight: FontWeight.w900,
+                  fontWeight: FontWeight.w700,
                 ),
               ),
               Text(
@@ -729,7 +729,7 @@ class _ActiveEventsPanel extends StatelessWidget {
                     ),
                     title: Text(
                       item.title,
-                      style: const TextStyle(fontWeight: FontWeight.w800),
+                      style: const TextStyle(fontWeight: FontWeight.w600),
                     ),
                     subtitle: Text('${item.typeLabel} • ${item.zoneName}'),
                     trailing: _AdminPill(
@@ -780,7 +780,7 @@ class _UrgentNeedsPanel extends StatelessWidget {
                     ),
                     title: Text(
                       item.typeLabel,
-                      style: const TextStyle(fontWeight: FontWeight.w800),
+                      style: const TextStyle(fontWeight: FontWeight.w600),
                     ),
                     subtitle: Text(
                       item.description,
@@ -837,7 +837,7 @@ class _VolunteerRow extends StatelessWidget {
               children: [
                 Text(
                   volunteer.fullName,
-                  style: const TextStyle(fontWeight: FontWeight.w900),
+                  style: const TextStyle(fontWeight: FontWeight.w700),
                 ),
                 const SizedBox(height: 3),
                 Text(
@@ -938,7 +938,7 @@ class _VolunteerDetailDialog extends StatelessWidget {
             const SizedBox(height: 14),
             const Text(
               'Justificatifs privés',
-              style: TextStyle(fontWeight: FontWeight.w900),
+              style: TextStyle(fontWeight: FontWeight.w700),
             ),
             const SizedBox(height: 8),
             FutureBuilder<List<AdminRescueDocument>>(
@@ -1225,7 +1225,7 @@ class _EventRow extends StatelessWidget {
             children: [
               Text(
                 event.title,
-                style: const TextStyle(fontWeight: FontWeight.w900),
+                style: const TextStyle(fontWeight: FontWeight.w700),
               ),
               Text(
                 '${event.typeLabel} • ${event.zoneName} • ${event.estimatedVictims} victime(s) estimée(s)',
@@ -1261,7 +1261,7 @@ class _NeedRow extends StatelessWidget {
             children: [
               Text(
                 need.typeLabel,
-                style: const TextStyle(fontWeight: FontWeight.w900),
+                style: const TextStyle(fontWeight: FontWeight.w700),
               ),
               Text(need.description),
             ],
@@ -1647,7 +1647,7 @@ class _AlertDialogState extends State<_AlertDialog> {
               const SizedBox(height: 15),
               const Text(
                 'Professions ciblées',
-                style: TextStyle(fontWeight: FontWeight.w900),
+                style: TextStyle(fontWeight: FontWeight.w700),
               ),
               const Text(
                 'Aucune sélection = toutes les professions.',
@@ -1673,7 +1673,7 @@ class _AlertDialogState extends State<_AlertDialog> {
               const SizedBox(height: 12),
               Text(
                 'Nombre maximal de volontaires : ${_limit.round()}',
-                style: const TextStyle(fontWeight: FontWeight.w800),
+                style: const TextStyle(fontWeight: FontWeight.w600),
               ),
               Slider(
                 value: _limit,
@@ -1840,7 +1840,7 @@ class _AdminPill extends StatelessWidget {
     ),
     child: Text(
       label,
-      style: TextStyle(color: color, fontSize: 11, fontWeight: FontWeight.w900),
+      style: TextStyle(color: color, fontSize: 11, fontWeight: FontWeight.w700),
     ),
   );
 }

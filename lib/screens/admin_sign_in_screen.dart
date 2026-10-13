@@ -87,45 +87,9 @@ class _AdminSignInScreenState extends State<AdminSignInScreen> {
 
 class _AdminBackdrop extends StatelessWidget {
   const _AdminBackdrop();
-
   @override
-  Widget build(BuildContext context) => DecoratedBox(
-    decoration: const BoxDecoration(
-      gradient: LinearGradient(
-        begin: Alignment.topLeft,
-        end: Alignment.bottomRight,
-        colors: [Color(0xFF101D33), Color(0xFF183B70)],
-      ),
-    ),
-    child: Stack(
-      children: [
-        Positioned(
-          right: -110,
-          top: -150,
-          child: Container(
-            width: 390,
-            height: 390,
-            decoration: const BoxDecoration(
-              color: Color(0x182F6DFF),
-              shape: BoxShape.circle,
-            ),
-          ),
-        ),
-        Positioned(
-          left: -100,
-          bottom: -180,
-          child: Container(
-            width: 430,
-            height: 430,
-            decoration: const BoxDecoration(
-              color: Color(0x0FFFF0C0),
-              shape: BoxShape.circle,
-            ),
-          ),
-        ),
-      ],
-    ),
-  );
+  Widget build(BuildContext context) =>
+      const ColoredBox(color: AdminColors.navy);
 }
 
 class _AdminStory extends StatelessWidget {
@@ -144,14 +108,14 @@ class _AdminStory extends StatelessWidget {
           color: Colors.white,
           fontSize: 42,
           height: 1.1,
-          fontWeight: FontWeight.w900,
+          fontWeight: FontWeight.w700,
           letterSpacing: -1.3,
         ),
       ),
       SizedBox(height: 18),
       Text(
         'Examinez les demandes des personnels et institutions avant leur apparition dans l’annuaire i-ENTIER.',
-        style: TextStyle(color: Color(0xFFD5DFF3), fontSize: 17, height: 1.55),
+        style: TextStyle(color: Color(0xFFC1CDC3), fontSize: 17, height: 1.55),
       ),
     ],
   );
@@ -204,7 +168,7 @@ class _AdminSignInCard extends StatelessWidget {
           'Accès à l’administration',
           style: Theme.of(context).textTheme.headlineSmall?.copyWith(
             color: AdminColors.ink,
-            fontWeight: FontWeight.w900,
+            fontWeight: FontWeight.w700,
           ),
         ),
         const SizedBox(height: 10),

@@ -394,7 +394,7 @@ class _CreditAdminHeader extends StatelessWidget {
                     style: TextStyle(
                       color: AdminColors.ink,
                       fontSize: 21,
-                      fontWeight: FontWeight.w900,
+                      fontWeight: FontWeight.w700,
                     ),
                   ),
                   Text(
@@ -547,7 +547,7 @@ class _OverviewDashboard extends StatelessWidget {
                 style: TextStyle(
                   color: AdminColors.ink,
                   fontSize: 18,
-                  fontWeight: FontWeight.w900,
+                  fontWeight: FontWeight.w700,
                 ),
               ),
               const SizedBox(height: 12),
@@ -569,7 +569,7 @@ class _OverviewDashboard extends StatelessWidget {
                     ),
                     title: Text(
                       'Crédit ${_shortId(item.creditId)}',
-                      style: const TextStyle(fontWeight: FontWeight.w800),
+                      style: const TextStyle(fontWeight: FontWeight.w600),
                     ),
                     subtitle: Text('Échéance du ${_date(item.dueDate)}'),
                     trailing: Wrap(
@@ -579,7 +579,7 @@ class _OverviewDashboard extends StatelessWidget {
                           _money(item.due - item.paid),
                           style: const TextStyle(
                             color: AdminColors.danger,
-                            fontWeight: FontWeight.w900,
+                            fontWeight: FontWeight.w700,
                           ),
                         ),
                         IconButton(
@@ -603,7 +603,7 @@ class _OverviewDashboard extends StatelessWidget {
                 style: TextStyle(
                   color: AdminColors.ink,
                   fontSize: 18,
-                  fontWeight: FontWeight.w900,
+                  fontWeight: FontWeight.w700,
                 ),
               ),
               const SizedBox(height: 12),
@@ -624,13 +624,13 @@ class _OverviewDashboard extends StatelessWidget {
                         '${credit.score}',
                         style: TextStyle(
                           color: _riskColor(credit.score),
-                          fontWeight: FontWeight.w900,
+                          fontWeight: FontWeight.w700,
                         ),
                       ),
                     ),
                     title: Text(
                       'Patient ${_shortId(credit.patientId)}',
-                      style: const TextStyle(fontWeight: FontWeight.w800),
+                      style: const TextStyle(fontWeight: FontWeight.w600),
                     ),
                     subtitle: Text('Solde ${_money(credit.balance)}'),
                     trailing: _AdminStatus(
@@ -757,7 +757,7 @@ class _ApplicationAdminCard extends StatelessWidget {
                       style: const TextStyle(
                         color: AdminColors.ink,
                         fontSize: 18,
-                        fontWeight: FontWeight.w900,
+                        fontWeight: FontWeight.w700,
                       ),
                     ),
                     Text(
@@ -818,7 +818,7 @@ class _ApplicationAdminCard extends StatelessWidget {
               'Justificatifs de revenus',
               style: TextStyle(
                 color: AdminColors.ink,
-                fontWeight: FontWeight.w800,
+                fontWeight: FontWeight.w600,
               ),
             ),
             const SizedBox(height: 8),
@@ -840,7 +840,7 @@ class _ApplicationAdminCard extends StatelessWidget {
             'Validation des références',
             style: TextStyle(
               color: AdminColors.ink,
-              fontWeight: FontWeight.w800,
+              fontWeight: FontWeight.w600,
             ),
           ),
           const SizedBox(height: 8),
@@ -917,7 +917,7 @@ class _ReferenceAdminTile extends StatelessWidget {
     ),
     title: Text(
       reference.name,
-      style: const TextStyle(fontWeight: FontWeight.w800),
+      style: const TextStyle(fontWeight: FontWeight.w600),
     ),
     subtitle: Text(
       '${reference.phone} • ${reference.relationship}${reference.note.isEmpty ? '' : '\n${reference.note}'}',
@@ -1029,7 +1029,7 @@ class _PaymentAdminTile extends StatelessWidget {
           _money(payment.amount),
           style: const TextStyle(
             color: AdminColors.ink,
-            fontWeight: FontWeight.w900,
+            fontWeight: FontWeight.w700,
           ),
         ),
         subtitle: Text(
@@ -1099,7 +1099,7 @@ class _SolidarityDashboard extends StatelessWidget {
                 style: TextStyle(
                   color: AdminColors.ink,
                   fontSize: 18,
-                  fontWeight: FontWeight.w900,
+                  fontWeight: FontWeight.w700,
                 ),
               ),
               const SizedBox(height: 10),
@@ -1118,13 +1118,13 @@ class _SolidarityDashboard extends StatelessWidget {
                         '${item.score}',
                         style: const TextStyle(
                           color: AdminColors.warning,
-                          fontWeight: FontWeight.w900,
+                          fontWeight: FontWeight.w700,
                         ),
                       ),
                     ),
                     title: Text(
                       'Patient ${_shortId(item.patientId)}',
-                      style: const TextStyle(fontWeight: FontWeight.w800),
+                      style: const TextStyle(fontWeight: FontWeight.w600),
                     ),
                     subtitle: Text('Évaluation du ${_date(item.assessedAt)}'),
                     trailing: _AdminStatus(
@@ -1161,7 +1161,7 @@ class _SolidarityDashboard extends StatelessWidget {
                             style: const TextStyle(
                               color: AdminColors.ink,
                               fontSize: 17,
-                              fontWeight: FontWeight.w900,
+                              fontWeight: FontWeight.w700,
                             ),
                           ),
                         ),
@@ -1562,7 +1562,7 @@ class _AdminCreditMetric extends StatelessWidget {
                 style: const TextStyle(
                   color: AdminColors.ink,
                   fontSize: 21,
-                  fontWeight: FontWeight.w900,
+                  fontWeight: FontWeight.w700,
                 ),
               ),
               Text(
@@ -1594,7 +1594,7 @@ class _AdminStatus extends StatelessWidget {
     ),
     child: Text(
       text,
-      style: TextStyle(color: color, fontSize: 11, fontWeight: FontWeight.w900),
+      style: TextStyle(color: color, fontSize: 11, fontWeight: FontWeight.w700),
     ),
   );
 }

@@ -284,7 +284,7 @@ class _Header extends StatelessWidget {
                 style: TextStyle(
                   color: AdminColors.ink,
                   fontSize: 25,
-                  fontWeight: FontWeight.w900,
+                  fontWeight: FontWeight.w700,
                 ),
               ),
               SizedBox(height: 5),
@@ -346,7 +346,7 @@ class _ApplicationCard extends StatelessWidget {
                 style: const TextStyle(
                   color: AdminColors.ink,
                   fontSize: 17,
-                  fontWeight: FontWeight.w900,
+                  fontWeight: FontWeight.w700,
                 ),
               ),
               const SizedBox(height: 4),
@@ -416,7 +416,7 @@ class _ApplicationDialog extends StatelessWidget {
             const Divider(height: 26),
             const Text(
               'Justificatifs',
-              style: TextStyle(fontWeight: FontWeight.w900),
+              style: TextStyle(fontWeight: FontWeight.w700),
             ),
             const SizedBox(height: 8),
             StreamBuilder<List<TraditionalAdminDocument>>(
@@ -578,7 +578,7 @@ class _ReportCard extends StatelessWidget {
                 style: const TextStyle(
                   color: AdminColors.ink,
                   fontSize: 17,
-                  fontWeight: FontWeight.w900,
+                  fontWeight: FontWeight.w700,
                 ),
               ),
             ),
@@ -590,7 +590,7 @@ class _ReportCard extends StatelessWidget {
           report.category,
           style: const TextStyle(
             color: AdminColors.danger,
-            fontWeight: FontWeight.w800,
+            fontWeight: FontWeight.w600,
           ),
         ),
         const SizedBox(height: 5),
@@ -645,7 +645,7 @@ class _StatusChip extends StatelessWidget {
         style: TextStyle(
           color: color,
           fontSize: 11,
-          fontWeight: FontWeight.w900,
+          fontWeight: FontWeight.w700,
         ),
       ),
     );
@@ -699,7 +699,7 @@ class _AdminFeedback extends StatelessWidget {
           title,
           style: const TextStyle(
             color: AdminColors.ink,
-            fontWeight: FontWeight.w900,
+            fontWeight: FontWeight.w700,
             fontSize: 17,
           ),
         ),

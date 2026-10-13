@@ -171,32 +171,33 @@ class _ManagerHeader extends StatelessWidget {
   const _ManagerHeader({required this.onAdd});
 
   @override
-  Widget build(BuildContext context) => Row(
-    crossAxisAlignment: CrossAxisAlignment.start,
-    children: [
-      Expanded(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              'Gestionnaire du diagnostic assisté',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
-            const SizedBox(height: 5),
-            const Text(
-              'Construisez, testez et publiez les parcours visibles par les patients.',
-              style: TextStyle(color: AdminColors.muted, fontSize: 15),
-            ),
-          ],
-        ),
-      ),
-      FilledButton.icon(
+  Widget build(BuildContext context) => LayoutBuilder(
+    builder: (context, constraints) {
+      final title = Text(
+        'Gestionnaire du diagnostic assisté',
+        style: Theme.of(context).textTheme.headlineMedium,
+      );
+      final action = FilledButton.icon(
         key: const ValueKey('add-pathway'),
         onPressed: onAdd,
         icon: const Icon(Icons.add_rounded),
         label: const Text('Nouveau malaise'),
-      ),
-    ],
+      );
+      if (constraints.maxWidth < 700) {
+        return Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [title, const SizedBox(height: 16), action],
+        );
+      }
+      return Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Expanded(child: title),
+          const SizedBox(width: 24),
+          action,
+        ],
+      );
+    },
   );
 }
 
@@ -234,7 +235,7 @@ class _PathwayCatalog extends StatelessWidget {
                   'Types de malaise',
                   style: TextStyle(
                     color: AdminColors.ink,
-                    fontWeight: FontWeight.w900,
+                    fontWeight: FontWeight.w700,
                   ),
                 ),
               ),
@@ -288,7 +289,7 @@ class _PathwayCatalog extends StatelessWidget {
                                         color: selected
                                             ? AdminColors.primaryDark
                                             : AdminColors.ink,
-                                        fontWeight: FontWeight.w800,
+                                        fontWeight: FontWeight.w600,
                                       ),
                                     ),
                                     const SizedBox(height: 3),
@@ -897,7 +898,7 @@ class _EditorToolbar extends StatelessWidget {
               style: const TextStyle(
                 color: AdminColors.ink,
                 fontSize: 17,
-                fontWeight: FontWeight.w900,
+                fontWeight: FontWeight.w700,
               ),
             ),
             const SizedBox(height: 3),
@@ -1029,7 +1030,7 @@ class _TreeSectionHeader extends StatelessWidget {
             '$title ($count)',
             style: const TextStyle(
               color: AdminColors.ink,
-              fontWeight: FontWeight.w900,
+              fontWeight: FontWeight.w700,
             ),
           ),
         ),
@@ -1111,7 +1112,7 @@ class _TreeNode extends StatelessWidget {
                         title,
                         style: const TextStyle(
                           color: AdminColors.ink,
-                          fontWeight: FontWeight.w800,
+                          fontWeight: FontWeight.w600,
                         ),
                       ),
                       if (subtitle != null && subtitle!.isNotEmpty) ...[
@@ -1185,7 +1186,7 @@ class _StatusBadge extends StatelessWidget {
       style: TextStyle(
         color: color,
         fontSize: 10.5,
-        fontWeight: FontWeight.w800,
+        fontWeight: FontWeight.w600,
       ),
     ),
   );
